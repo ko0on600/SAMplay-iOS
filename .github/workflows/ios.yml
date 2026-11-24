@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: macos-latest
-    timeout-minutes: 120
+    timeout-minutes: 50
     env:
       IOS_CONFIGURATION: ${{ inputs.configuration || 'Release' }}
       GRADLE_OPTS: -Dfile.encoding=UTF-8
