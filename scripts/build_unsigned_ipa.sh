@@ -25,8 +25,10 @@ rc=$?
 set -e
 # Keep the cinterop klibs (lets a Linux box type-check iosMain without a Mac).
 mkdir -p build/cinterop
-find composeApp/build -name "*cinterop*.klib" -exec cp -R {} build/cinterop/ \; 2>/dev/null || true
-find composeApp/build -type d -path "*cinterop*" -name "*.klib" -exec cp -R {} build/cinterop/ \; 2>/dev/null || true
+find composeApp/build -path "*cinterop*" -maxdepth 9 > build/cinterop/listing.txt 2>/dev/null || true
+if [ -d composeApp/build/classes/kotlin/iosArm64/main/cinterop ]; then
+  cp -R composeApp/build/classes/kotlin/iosArm64/main/cinterop build/cinterop/iosArm64 || true
+fi
 if [ $rc -ne 0 ]; then
   echo "::group::compile errors"
   grep -E "error:|: error|^e: |FAILURE|What went wrong" -A3 build/xcodebuild.log | head -300 || true
