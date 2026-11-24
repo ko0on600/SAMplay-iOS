@@ -114,6 +114,7 @@ private fun nuvioComposeViewController(
 ): UIViewController {
     NetworkPathObserver.start()
     AutoSyncPreferencesIos.initialize()
+    com.nuvio.app.samplay.SamplayStartup.start()
     return ComposeUIViewController(
         configure = { onFocusBehavior = OnFocusBehavior.DoNothing },
         content = {

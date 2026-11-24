@@ -338,7 +338,8 @@ actual fun PlatformPlayerSurface(
     LaunchedEffect(bridge, sourceUrl, sourceAudioUrl, sourceHeaders, externalSubtitles) {
         bridge.applyIosVideoOutputSettings(latestPlayerSettings.value)
         bridge.loadFileWithAudio(
-            videoUrl = sourceUrl,
+            // SAMplay: a Photos video («On this device») is opened as a file.
+            videoUrl = com.nuvio.app.features.device.DeviceVideoPlatform.resolveForPlayback(sourceUrl),
             audioUrl = sourceAudioUrl,
             headersJson = encodePlaybackHeadersForBridge(sourceHeaders),
             subtitlesJson = encodeExternalSubtitlesForBridge(externalSubtitles),

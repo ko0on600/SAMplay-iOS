@@ -10,6 +10,10 @@ struct iOSApp: App {
             ContentView()
                 .preferredColorScheme(.dark)
                 .onOpenURL { url in
+                    // SAMplay: «Open in SAMplay» for a video from Files or another app.
+                    if url.isFileURL && DeviceVideoPlatform_iosKt.samplayOpenIncomingFile(url: url.absoluteString) {
+                        return
+                    }
                     AppUrlBridgeKt.handleAppUrl(url: url.absoluteString)
                 }
         }
