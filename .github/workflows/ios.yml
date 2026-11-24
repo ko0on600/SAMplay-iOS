@@ -25,7 +25,7 @@ concurrency:
 jobs:
   build:
     runs-on: macos-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     env:
       IOS_CONFIGURATION: ${{ inputs.configuration || 'Release' }}
       KOTLIN_FRAMEWORK_BUILD_TYPE: ${{ inputs.kotlin_build_type || 'debug' }}
@@ -59,6 +59,16 @@ jobs:
       - name: Runtime properties (from secret, never committed)
         if: env.RUNTIME_PROPERTIES_BASE64 != ''
         run: printf '%s' "$RUNTIME_PROPERTIES_BASE64" | base64 --decode > local.properties
+      - name: Build Kotlin framework (own step, so its time is visible)
+        run: |
+          ( while sleep 120; do echo "resources $(date -u +%H:%M:%S) $(uptime)"; done ) &
+          trap 'kill $! 2>/dev/null || true' EXIT
+          ./scripts/prepare-ios-dependencies.sh
+          case "$KOTLIN_FRAMEWORK_BUILD_TYPE" in release) BT=Release;; *) BT=Debug;; esac
+          env NUVIO_IOS_DISTRIBUTION=full \
+            "ORG_GRADLE_PROJECT_org.gradle.jvmargs=$NUVIO_GRADLE_JVMARGS" \
+            "ORG_GRADLE_PROJECT_kotlin.native.jvmArgs=$NUVIO_KOTLIN_NATIVE_JVMARGS" \
+            ./gradlew :composeApp:link${BT}FrameworkIosArm64 --console=plain
       - name: Build unsigned IPA
         run: |
           ( while sleep 120; do echo "::group::resources $(date -u +%H:%M:%S)"; uptime; vm_stat | head -6; echo "::endgroup::"; done ) &
