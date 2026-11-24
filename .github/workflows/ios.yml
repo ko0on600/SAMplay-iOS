@@ -1,7 +1,8 @@
 name: SAMplay iOS IPA
 on:
   push:
-    branches: [main]
+    branches: [main, wip-p2]
+    paths-ignore: ['PROGRESS_IOS.md']
   workflow_dispatch:
     inputs:
       configuration:
@@ -10,7 +11,7 @@ on:
         options: [Release, Debug]
         default: Release
 concurrency:
-  group: ios-${{ github.ref }}
+  group: samplay-ios-${{ github.ref_name }}
   cancel-in-progress: true
 jobs:
   build:
