@@ -46,4 +46,10 @@ class SamplayPlayerIosTest {
         val max = ByteArray(OpenSubtitlesHash.CHUNK).also { for (i in 0 until 8) it[i] = 0xFF.toByte() }
         assertEquals("000000000001fffe", OpenSubtitlesHash.hex(131_072, max, max))
     }
+
+    @Test
+    fun audioOutputKeyMatchesTheAndroidShape() {
+        assertEquals("type:bluetootha2dp|name:sami_airpods_pro", audioOutputKeyOf("BluetoothA2DP", " Sami AirPods  Pro "))
+        assertEquals("type:speaker|name:unknown", audioOutputKeyOf("Speaker", null))
+    }
 }

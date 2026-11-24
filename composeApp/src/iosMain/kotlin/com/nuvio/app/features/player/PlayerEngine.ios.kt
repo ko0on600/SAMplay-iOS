@@ -285,6 +285,12 @@ actual fun PlatformPlayerSurface(
                 bridge.setSubtitleDelayMs(delayMs.coerceIn(SUBTITLE_DELAY_MIN_MS, SUBTITLE_DELAY_MAX_MS))
             }
 
+            override val supportsAudioDelay: Boolean get() = true
+
+            override fun setAudioDelayMs(delayMs: Int) {
+                bridge.setAudioDelayMs(delayMs.coerceIn(AUDIO_DELAY_MIN_MS, AUDIO_DELAY_MAX_MS))
+            }
+
             override fun applySubtitleStyle(style: SubtitleStyleState) {
                 subtitleStyle = style
                 bridge.applySubtitleStyle(

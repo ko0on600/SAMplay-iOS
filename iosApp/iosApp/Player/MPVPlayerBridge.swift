@@ -176,6 +176,7 @@ final class MPVPlayerBridgeImpl: NSObject, NuvioPlayerBridge {
     func clearExternalSubtitle() { playerVC?.removeExternalSubtitles() }
     func clearExternalSubtitleAndSelect(trackId: Int32) { playerVC?.removeExternalSubtitlesAndSelect(Int(trackId)) }
     func setSubtitleDelayMs(delayMs: Int32) { playerVC?.setSubtitleDelayMs(Int(delayMs)) }
+    func setAudioDelayMs(delayMs: Int32) { ensurePlayerViewController().setAudioDelayMs(Int(delayMs)) }
     func setSubtitleTextHandler(handler: SubtitleTextHandler?) {
         ensurePlayerViewController().subtitleTextHandler = handler
     }
@@ -570,6 +571,10 @@ final class MPVPlayerViewController: UIViewController {
 
         checkError(mpv_initialize(mpv))
         applyAudioLanguagePreferences(preferredAudioLanguages)
+        if pendingAudioDelaySeconds != 0 {
+            var audioDelay = pendingAudioDelaySeconds
+            checkError(mpv_set_property(mpv, "audio-delay", MPV_FORMAT_DOUBLE, &audioDelay))
+        }
 
         // Observe properties
         mpv_observe_property(mpv, 0, "pause", MPV_FORMAT_FLAG)
@@ -972,6 +977,15 @@ final class MPVPlayerViewController: UIViewController {
         } else {
             setStringProperty("sid", "no")
         }
+    }
+
+    private var pendingAudioDelaySeconds: Double = 0
+
+    func setAudioDelayMs(_ delayMs: Int) {
+        var delaySeconds = Double(max(-60_000, min(60_000, delayMs))) / 1000.0
+        pendingAudioDelaySeconds = delaySeconds
+        guard mpv != nil else { return }
+        checkError(mpv_set_property(mpv, "audio-delay", MPV_FORMAT_DOUBLE, &delaySeconds))
     }
 
     func setSubtitleDelayMs(_ delayMs: Int) {
