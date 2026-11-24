@@ -13,7 +13,7 @@ player), so UI and logic are the Android ones. Android-only SAMplay parts get iO
 
 ## Phases
 1. [CI pending] Shared app as-is for iOS + SAMplay branding/icons.
-2. [fixing compile errors on CI; run 45420818202] iOS ports of Android-only SAMplay features:
+2. [Kotlin iosArm64 main+test compile OK locally (box); CI run pending] iOS ports of Android-only SAMplay features:
    - Google Drive settings sync (`features/reshaped/sync/*`, installed at startup by `SamplayStartup`).
    - AI subtitles: Google free translation, Pro AI (Claude/ChatGPT/Gemini/Grok; Claude via direct
      Messages API), saved translations (Documents/SAMplay/Subtitles, visible in Files), Pro key sync.
@@ -45,3 +45,15 @@ player), so UI and logic are the Android ones. Android-only SAMplay parts get iO
   `import platform.<Fw>.<name>`. `/workspace/samplay-ios/extcheck.py <files>` lists candidates.
 - Properties redeclared in subclasses (UIImagePickerController.delegate,
   NSMutableURLRequest.timeoutInterval) only exist as setX(...) functions.
+
+## Local Gradle compile on the box (works!)
+Worktree `/workspace/samplay-ios/lc` (detached, local-only edits: gradle.properties has
+kotlin.native.home=<macos K/N prebuilt>, kotlin.native.disableCompilerDaemon=true; build.gradle.kts
+uses prebuilt cinterop klibs when SAMPLAY_LOCAL_KLIBS is set). Sync: `git -C lc stash; git -C lc
+checkout --detach wip-p2; git -C lc stash pop`. Run:
+`env NUVIO_IOS_DISTRIBUTION=full SAMPLAY_LOCAL_KLIBS=/workspace/samplay-ios/klibs ./gradlew
+:composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
+
+## NEXT ACTION
+Dispatch CI on wip-p2 (Release) in background; fix Swift/link errors if any; when green + verify_ipa
+OK, merge to main, upload IPA to Drive "SAMplay iOS", copy to PC, report.
