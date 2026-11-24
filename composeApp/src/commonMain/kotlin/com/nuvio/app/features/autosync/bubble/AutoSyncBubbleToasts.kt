@@ -83,14 +83,18 @@ internal object AutoSyncBubbleToasts {
     internal fun resetSchedulerForTest() { scheduler = mainScheduler }
     private var cancelWorkingTimeout: (() -> Unit)? = null
 
-    @Synchronized
+    // Nuvio RS: a lock that works on every platform (@Synchronized is JVM-only).
+    private val timeoutLock = kotlinx.atomicfu.locks.SynchronizedObject()
+
     private fun scheduleWorkingTimeout(message: AutoSyncBubbleMessage?) {
-        cancelWorkingTimeout?.invoke()
-        cancelWorkingTimeout = null
-        if (message == null || message.kind != AutoSyncBubbleKind.Working) return
-        val id = message.id
-        cancelWorkingTimeout = scheduler.schedule(WORKING_TIMEOUT_MS) {
-            _current.update { if (it?.id == id && it.kind == AutoSyncBubbleKind.Working) null else it }
+        kotlinx.atomicfu.locks.synchronized(timeoutLock) {
+            cancelWorkingTimeout?.invoke()
+            cancelWorkingTimeout = null
+            if (message == null || message.kind != AutoSyncBubbleKind.Working) return
+            val id = message.id
+            cancelWorkingTimeout = scheduler.schedule(WORKING_TIMEOUT_MS) {
+                _current.update { if (it?.id == id && it.kind == AutoSyncBubbleKind.Working) null else it }
+            }
         }
     }
 

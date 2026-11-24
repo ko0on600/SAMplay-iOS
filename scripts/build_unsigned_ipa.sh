@@ -23,6 +23,10 @@ env NUVIO_IOS_DISTRIBUTION=full \
   build > build/xcodebuild.log 2>&1
 rc=$?
 set -e
+# Keep the cinterop klibs (lets a Linux box type-check iosMain without a Mac).
+mkdir -p build/cinterop
+find composeApp/build -name "*cinterop*.klib" -exec cp -R {} build/cinterop/ \; 2>/dev/null || true
+find composeApp/build -type d -path "*cinterop*" -name "*.klib" -exec cp -R {} build/cinterop/ \; 2>/dev/null || true
 if [ $rc -ne 0 ]; then
   echo "::group::compile errors"
   grep -E "error:|: error|^e: |FAILURE|What went wrong" -A3 build/xcodebuild.log | head -300 || true

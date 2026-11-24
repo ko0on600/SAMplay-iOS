@@ -70,6 +70,5 @@ jobs:
         with:
           name: cinterop-klibs
           path: |
-            composeApp/build/classes/kotlin/iosArm64/main/cinterop/*.klib
-            composeApp/build/libs/*cinterop*.klib
+            build/cinterop/
           if-no-files-found: warn
