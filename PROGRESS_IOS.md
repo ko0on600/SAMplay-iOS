@@ -56,7 +56,7 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 
 ## NEXT ACTION
 Repo made PUBLIC 2026-11-25 00:18 Riyadh (Sami chose it, accepting the PikPak client credential in
-PikPakApiClient.kt being visible; audit found nothing else). Run 45489580638 (wip-p2) dispatched —
+PikPakApiClient.kt being visible; audit found nothing else). Run 45489580638 (wip-p2) dispatched — Kotlin framework link step SUCCEEDED in 25 min (00:18–00:43 Riyadh); "Build unsigned IPA" (Swift/Xcode) running from 00:43 —
 follow it; on green: verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
 
 ## CI minutes warning
