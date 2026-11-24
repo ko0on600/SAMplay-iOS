@@ -55,7 +55,12 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-CI run 45424258490 (wip-p2, Release, has whisper exclusivity fix) queued — check it; fix Swift/link errors if any; when green + verify_ipa
+CI run 45429231561 (wip-p2 push, Release) running — check it; fix Swift/link errors if any; when green + verify_ipa
 OK, merge to main, upload IPA to Drive "SAMplay iOS", copy to PC, report.
 
 Drive target: SAMplay files live in Drive folder "Xplaier" (id 1pBrJRyzZlsKZ9VY-moj4uExwSquc-Gl6); create subfolder "SAMplay iOS" there.
+
+## CI minutes warning
+Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
+with 50 they start. Every macOS run is precious: compile-check locally first (see above).
+wip-p2 pushes now trigger CI (PROGRESS_IOS.md-only pushes don't).
