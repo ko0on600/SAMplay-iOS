@@ -59,7 +59,7 @@ Runs 45429231561 (Release Kotlin) and 45439984032 (debug Kotlin) both hit the jo
 still inside the Gradle compile/link step (no compile errors reported; Kotlin compiles locally).
 Cause likely: cold ~/.konan (cache never saved since no job ever succeeded) + K/N static-cache
 building. Pushed: konan cache saved with if: always(), cacheKind.iosArm64=none. Check the newest
-wip-p2 run (45447920608, timeout 60 min); if it still times out, compare timings (xcodebuild.log) and consider raising
+wip-p2 run (45447920608, started 20:23 Riyadh, timeout 60 min = 21:23; still in "Build unsigned IPA" at 20:52). Local fact: compileKotlinIosArm64 takes only 1m41 on the box with a 4.6G heap, so the CI time goes into the framework LINK (K/N codegen of all deps), not compile. If it times out, compare timings (xcodebuild.log) and consider raising
 timeout-minutes (queue start is just slow, 5-10 min, not blocked by the timeout value).
 
 ## CI minutes warning
