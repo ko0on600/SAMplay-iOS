@@ -53,6 +53,8 @@ jobs:
           ( while sleep 120; do echo "::group::resources $(date -u +%H:%M:%S)"; uptime; vm_stat | head -6; echo "::endgroup::"; done ) &
           trap 'kill $! 2>/dev/null || true' EXIT
           ./scripts/build_unsigned_ipa.sh
+      - name: Unit tests (iOS simulator)
+        run: ./gradlew :composeApp:iosSimulatorArm64Test --tests "com.nuvio.app.features.ai.*" --tests "com.nuvio.app.features.player.SamplayPlayerIosTest" --tests "com.nuvio.app.features.reshaped.*" --no-daemon
       - name: Remove secrets
         if: always()
         run: rm -f local.properties
@@ -64,6 +66,7 @@ jobs:
             build/*.ipa
             build/verify.txt
             build/xcodebuild.log
+            composeApp/build/reports/tests/
           if-no-files-found: warn
       - uses: actions/upload-artifact@v4
         if: always()

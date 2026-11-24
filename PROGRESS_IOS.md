@@ -13,7 +13,7 @@ player), so UI and logic are the Android ones. Android-only SAMplay parts get iO
 
 ## Phases
 1. [CI pending] Shared app as-is for iOS + SAMplay branding/icons.
-2. [code written, not yet compiled] iOS ports of Android-only SAMplay features:
+2. [fixing compile errors on CI; run 45420818202] iOS ports of Android-only SAMplay features:
    - Google Drive settings sync (`features/reshaped/sync/*`, installed at startup by `SamplayStartup`).
    - AI subtitles: Google free translation, Pro AI (Claude/ChatGPT/Gemini/Grok; Claude via direct
      Messages API), saved translations (Documents/SAMplay/Subtitles, visible in Files), Pro key sync.
@@ -24,10 +24,24 @@ player), so UI and logic are the Android ones. Android-only SAMplay parts get iO
      (CFBundleDocumentTypes, `samplayOpenIncomingFile` from Swift onOpenURL); Photos videos played
      via original file / Photos export to cache.
    - Reshaped subtitle font picker (uses the shared font importer).
+   - Audio delay on iOS (mpv `audio-delay`), remembered per output route (AVAudioSession), and
+     Seekr seek-preview sprite decoding (skia).
 3. Audio: whisper listening + VAD audio-sync fallback (FFmpeg from MPVKit) or documented limit.
-4. Unit tests (iosSimulatorArm64Test) for ported logic; final IPA; Drive + PC delivery.
+4. Unit tests (iosSimulatorArm64Test, CI step after the IPA) for ported logic; final IPA; Drive + PC delivery.
 
 ## Known limits (iOS can't do the Android way)
 - ML Kit offline translation -> online Google translation only.
 - v32 migration -> Android only (no v32 on iOS).
 - Floating window -> iOS Picture in Picture (already in iosApp).
+
+## Not ported yet (big, not iOS-impossible)
+- Audio-sync fallback from heard speech (Android `player/audiosync` ~6k lines + sherpa-onnx ASR/VAD).
+  iOS keeps the reference-based AutoSync (shared code). Next phase if credits allow.
+
+## Local checking tips (box)
+- `/workspace/samplay-ios/kn/dumps/*.txt` = K/N 2.4.10 ios_arm64 API dumps. ObjC *category*
+  properties (e.g. NSMutableURLRequest.HTTPMethod, NSURL.lastPathComponent,
+  NSFileManager.temporaryDirectory, AVAudioSession.currentRoute) need an explicit
+  `import platform.<Fw>.<name>`. `/workspace/samplay-ios/extcheck.py <files>` lists candidates.
+- Properties redeclared in subclasses (UIImagePickerController.delegate,
+  NSMutableURLRequest.timeoutInterval) only exist as setX(...) functions.
