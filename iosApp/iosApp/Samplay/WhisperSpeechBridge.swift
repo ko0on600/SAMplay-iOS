@@ -199,15 +199,16 @@ final class WhisperSpeechBridge: NSObject, AiSpeechEngineBridge {
         func convert(_ fr: UnsafeMutablePointer<AVFrame>?) -> Bool {
             let inCount = fr?.pointee.nb_samples ?? 0
             let capacity = Int(swr_get_out_samples(swr, inCount)) + 256
-            var out = [Float](repeating: 0, count: max(capacity, 256))
+            let outCount = max(capacity, 256)
+            var out = [Float](repeating: 0, count: outCount)
             let produced: Int32 = out.withUnsafeMutableBytes { raw -> Int32 in
                 var outPtr: UnsafeMutablePointer<UInt8>? = raw.baseAddress?.assumingMemoryBound(to: UInt8.self)
                 return withUnsafePointer(to: &outPtr) { outPP in
                     if let fr = fr, let ext = fr.pointee.extended_data {
                         let inPP = UnsafeRawPointer(ext).assumingMemoryBound(to: UnsafePointer<UInt8>?.self)
-                        return swr_convert(swr, outPP, Int32(out.count), inPP, inCount)
+                        return swr_convert(swr, outPP, Int32(outCount), inPP, inCount)
                     }
-                    return swr_convert(swr, outPP, Int32(out.count), nil, 0)
+                    return swr_convert(swr, outPP, Int32(outCount), nil, 0)
                 }
             }
             if produced > 0 {
