@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="player_floating_window">نافذة عائمة</string>
+    <string name="player_background_audio">التشغيل في الخلفية</string>
+    <string name="player_background_audio_on">تم تفعيل التشغيل في الخلفية: يستمر الصوت عند الخروج من التطبيق</string>
+    <string name="player_background_audio_off">تم إيقاف التشغيل في الخلفية</string>
+    <string name="player_background_audio_playing">يتم تشغيل الصوت في الخلفية</string>
+    <string name="player_pip_seek_back">رجوع 10 ثوانٍ</string>
+    <string name="player_pip_seek_forward">تقديم 10 ثوانٍ</string>
+    <string name="player_floating_permission">اسمح لـ SAMplay بالظهور فوق التطبيقات، عشان النافذة العائمة تنطوي في طرف الشاشة</string>
+</resources>

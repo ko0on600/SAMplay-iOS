@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="webdav_info_action">تعديل البوستر والمعلومات</string>
+    <string name="webdav_info_link">رابط من TMDB أو IMDb أو السينما.كوم أو TheTVDB (أو رابط صورة)</string>
+    <string name="webdav_info_fetch">جلب</string>
+    <string name="webdav_info_search">بحث بالاسم</string>
+    <string name="webdav_info_search_action">بحث</string>
+    <string name="webdav_info_details">المعلومات</string>
+    <string name="webdav_info_name">الاسم</string>
+    <string name="webdav_info_poster">رابط صورة البوستر</string>
+    <string name="webdav_info_pick_image">اختيار من الصور</string>
+    <string name="webdav_info_background">رابط صورة الخلفية</string>
+    <string name="webdav_info_year">السنة</string>
+    <string name="webdav_info_imdb">معرّف IMDb ‏(tt…) لأسماء الحلقات والترجمة</string>
+    <string name="webdav_info_description">القصة</string>
+    <string name="webdav_info_save">حفظ</string>
+    <string name="webdav_info_reset">حذف تعديلاتي</string>
+    <string name="webdav_info_cancel">إلغاء</string>
+    <string name="webdav_info_not_found">لم يتم العثور على معلومات في هذا الرابط</string>
+    <string name="webdav_info_failed">تعذّر الوصول للموقع. تحقق من الاتصال.</string>
+    <string name="webdav_info_no_results">لا توجد نتائج</string>
+</resources>

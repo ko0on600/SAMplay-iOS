@@ -1,0 +1,21 @@
+# Copy to local.properties and fill in. The signing key is already in keystore.properties.
+sdk.dir=C\:\\Users\\YOU\\AppData\\Local\\Android\\Sdk
+
+# Nuvio account (Supabase) - the values from Nuvio's own build
+NUVIO_SUPABASE_URL=
+NUVIO_SUPABASE_ANON_KEY=
+NUVIO_SUPABASE_FALLBACK_URL=
+
+# Sync with Google (device-flow OAuth client, type TV and limited input devices)
+RESHAPED_GOOGLE_TV_CLIENT_ID=
+RESHAPED_GOOGLE_TV_CLIENT_SECRET=
+
+# SIMKL tracking
+SIMKL_CLIENT_ID=
+SIMKL_REDIRECT_URI=
+SIMKL_APP_NAME=
+
+# Optional services
+INTRODB_API_URL=
+IMDB_RATINGS_API_BASE_URL=
+IMDB_TAPFRAME_API_BASE_URL=

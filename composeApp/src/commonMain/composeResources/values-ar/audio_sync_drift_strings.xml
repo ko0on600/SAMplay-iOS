@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_playback_audio_sync_drift_watch">إبقاء الترجمة متوازنة أثناء التشغيل</string>
+    <string name="settings_playback_audio_sync_drift_watch_description">يواصل مقارنة الترجمة بالكلام طوال التشغيل وبعد كل تقديم أو تأخير. إذا انحرفت الترجمة وسط الحلقة يعيد موازنتها تلقائيًا، مع انتظار بسيط بين كل تصحيح والذي بعده. التوقيت الذي تضبطه بيدك لا يتغيّر.</string>
+</resources>

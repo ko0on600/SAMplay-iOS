@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nuvio RS (from SAMplay 1.8.9): a drive link that answered an HTTP error is asked for again. -->
+    <string name="player_link_retry">HTTP %1$d — asking for a new link (%2$d of %3$d)</string>
+</resources>

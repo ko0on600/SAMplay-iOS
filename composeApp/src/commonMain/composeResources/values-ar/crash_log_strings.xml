@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_advanced_section_crash_log">سجل الأعطال</string>
+    <string name="settings_advanced_crash_log">مشاركة سجل الأعطال</string>
+    <string name="settings_advanced_crash_log_description">سبب إغلاق التطبيق مؤخرًا وصيغة الفيلم الذي كان يعمل وقتها، لإرساله عند الإبلاغ عن مشكلة. يُحفظ على هذا الجهاز فقط، والروابط تُختصر إلى اسم الموقع</string>
+    <string name="settings_advanced_crash_log_empty">لا توجد أعطال مسجلة على هذا الجهاز</string>
+</resources>

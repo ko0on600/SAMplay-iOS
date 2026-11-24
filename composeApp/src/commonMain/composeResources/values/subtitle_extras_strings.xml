@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle_extra_search_online">Search online</string>
+    <string name="subtitle_extra_load_file">From device files</string>
+    <string name="subtitle_extra_save">Save subtitle</string>
+    <string name="subtitle_search_title">Online subtitle search</string>
+    <string name="subtitle_search_hint">Movie or series name</string>
+    <string name="subtitle_search_no_titles">No titles found</string>
+    <string name="subtitle_search_no_subtitles">No subtitles found for this title</string>
+    <string name="subtitle_search_failed">Search failed. Check the connection.</string>
+    <string name="subtitle_search_season">Season</string>
+    <string name="subtitle_search_episode">Episode</string>
+    <string name="subtitle_search_find">Find subtitles</string>
+    <string name="subtitle_search_movie">Movie</string>
+    <string name="subtitle_search_series">Series</string>
+    <string name="subtitle_file_source">Device file</string>
+    <string name="subtitle_saved">Subtitle saved</string>
+    <string name="subtitle_save_failed">Couldn\'t save the subtitle</string>
+    <string name="subtitle_save_with_sync">With the sync (%1$s)</string>
+    <string name="subtitle_save_original">As it came</string>
+    <string name="subtitle_save_cancel">Cancel</string>
+    <string name="subtitle_saved_with_sync">Subtitle saved with the sync</string>
+    <string name="subtitle_save_sync_failed">Couldn\'t add the sync to this subtitle file</string>
+    <string name="subtitle_load_failed">Couldn\'t load the subtitle file</string>
+</resources>

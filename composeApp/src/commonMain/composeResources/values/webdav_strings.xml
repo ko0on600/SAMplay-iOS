@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cloud_section">Cloud</string>
+
+    <string name="webdav_title">WebDAV</string>
+    <string name="webdav_row_title">WebDAV · PikPak</string>
+    <string name="webdav_row_description">Play videos from PikPak, Nextcloud, a NAS or any WebDAV drive</string>
+    <string name="webdav_sheet_subtitle">Sign in with the WebDAV client username and password from your drive.</string>
+    <string name="webdav_enable">WebDAV Enable</string>
+    <string name="webdav_universal_endpoint">Universal Endpoint</string>
+    <string name="webdav_alternative_endpoint">Alternative Endpoint</string>
+    <string name="webdav_alternative_hint">https://nas.local:5006/dav</string>
+    <string name="webdav_legacy_endpoint">Legacy Endpoint</string>
+    <string name="webdav_legacy_note">Try this if you can\'t connect to the primary endpoint.\nUpload not supported</string>
+    <string name="webdav_scheme_note">Both HTTP (with port 80) and HTTPS (with port 443) schemes are supported.</string>
+    <string name="webdav_client">Client</string>
+    <string name="webdav_advanced">Advanced</string>
+    <string name="webdav_use_https">Use HTTPS</string>
+    <string name="webdav_port">Port (optional)</string>
+    <string name="webdav_folder">Folder (optional)</string>
+    <string name="webdav_folder_hint">/My Pack</string>
+    <string name="webdav_copy">Copy</string>
+    <string name="webdav_copied">Copied</string>
+    <string name="webdav_get_credentials">Open PikPak WebDAV settings to get your username and password</string>
+    <string name="webdav_disabled_note">Turn on WebDAV Enable to connect this drive.</string>
+    <string name="webdav_pikpak_qualities">PikPak video qualities</string>
+    <string name="webdav_pikpak_qualities_description">Optional. Sign in with your PikPak account (email/phone + account password) to list Original and every transcode (4K, 1080P, 720P, 480P, …) when opening a file. WebDAV password alone is not enough.</string>
+    <string name="webdav_pikpak_account_username">PikPak account (email / phone)</string>
+    <string name="webdav_pikpak_account_password">PikPak account password</string>
+    <string name="webdav_pikpak_link_qualities">Enable quality options</string>
+    <string name="webdav_pikpak_qualities_linked">Quality options linked</string>
+    <string name="webdav_pikpak_qualities_link_failed">Could not link PikPak account for qualities</string>
+    <string name="library_servers_layout_grid">Show large grid</string>
+    <string name="library_servers_layout_list">Show large list</string>
+    <string name="webdav_kind_movie">Movie</string>
+    <string name="webdav_kind_series">Series</string>
+    <string name="webdav_kind_folder">Section</string>
+    <string name="webdav_kind_folder_note">A plain section: only the name and picture you choose. Nothing is looked up.</string>
+</resources>

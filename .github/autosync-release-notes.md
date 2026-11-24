@@ -1,0 +1,12 @@
+- Added Continue Watching selection preferences and show-level Next Up dismissal migration while preserving Reshaped navigation, settings and playback controls; updated French and Slovak translations.
+- Added upstream next-matching-source fallback and shared source searches while retaining Reshaped connection-fit sorting, badges, filtering and playback recovery.
+- Stale fallback attempts cannot replace a manually selected source or stop the new source search.
+- Added current upstream chapter controls, HLS/DASH compatibility fixes, clearer playback errors, and refresh of expired cached links while retaining Reshaped subtitle retries, fonts, seek previews, and cache behavior.
+- Synced current upstream mobile fixes for session refresh, focused backdrops, subtitle restoration, MPV error details, and MDBList caching.
+- Adapted restored-subtitle search across ExoPlayer, libass and MPV while retaining Reshaped reference retries, secondary-language search, audio fallback and debug controls.
+- Preserved Reshaped defaults and settings placement; AutoSync can now be enabled without choosing a preferred subtitle language.
+- Updated to upstream Nuvio 0.6.10-beta, including the shared Android/iOS AutoSync engine and playback and audio improvements.
+- Retained Reshaped settings and search, subtitle reference retries and debug reports, AudioSync fallback, Live TV, seek previews, custom fonts, network monitoring, and volume boost.
+- Adapted the MPV coordinator to shared code while preserving retry behavior, cache exclusions, and Live TV recovery alongside upstream playback recovery.
+- Combined MPV amplification with Reshaped volume boost so either control retains the other's gain and both use the correct MPV volume scale.
+- Android release codes now increase for each Reshaped revision, including when upstream keeps the same build number. Release checks also verify the package and signing identity for every APK.

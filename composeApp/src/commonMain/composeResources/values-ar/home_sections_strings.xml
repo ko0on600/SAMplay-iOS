@@ -1,0 +1,11 @@
+<resources>
+    <string name="home_section_move_up">نقل لأعلى</string>
+    <string name="home_section_move_down">نقل لأسفل</string>
+    <string name="home_section_hide">إخفاء هذا القسم</string>
+    <string name="home_section_hidden_toast">أُخفي «%1$s». تقدر ترجّعه من «أقسام مخفية» أسفل الرئيسية.</string>
+    <string name="home_section_manage">إدارة الأقسام</string>
+    <string name="home_hidden_sections_footer">أقسام مخفية: %1$d · إدارة</string>
+    <string name="home_hidden_sections_empty">لا توجد أقسام مخفية. اضغط مطولًا على عنوان أي قسم لإخفائه أو نقله لأعلى أو لأسفل.</string>
+    <string name="home_hidden_sections_hint">اضغط على أي قسم لإظهاره من جديد.</string>
+    <string name="home_hidden_sections_show_all">إظهار الكل</string>
+</resources>

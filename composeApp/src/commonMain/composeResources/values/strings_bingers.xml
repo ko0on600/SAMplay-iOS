@@ -1,0 +1,19 @@
+<resources>
+    <string name="settings_bingers_connect">Connect Bingers</string>
+    <string name="settings_bingers_disconnect">Disconnect</string>
+    <string name="settings_bingers_connected_as">Connected as %1$s</string>
+    <string name="settings_bingers_account_fallback">your Bingers account</string>
+    <string name="settings_bingers_connected_description">SAMplay records what you watch in Bingers: every play that stops at 80% or more, and anything you mark as watched. Unmarking removes it there too.</string>
+    <string name="settings_bingers_sign_in_description">On bingers.app/integrations, create a personal access token with Read + write access, then paste it here. The Bingers API needs the Legend or Icon plan.</string>
+    <string name="settings_bingers_token_label">Personal access token</string>
+    <string name="settings_bingers_token_placeholder">bng_pat_…</string>
+    <string name="settings_bingers_create_token">Create a token</string>
+    <string name="settings_bingers_disconnect_description">SAMplay stops recording to Bingers on this profile and forgets the token. What is already in Bingers stays there.</string>
+    <string name="settings_bingers_last_recorded">Last recorded: %1$s</string>
+    <string name="settings_bingers_error_invalid_token">Bingers did not accept this token. Check it, or create a new one.</string>
+    <string name="settings_bingers_error_read_only">This token can only read. Create one with Read + write access.</string>
+    <string name="settings_bingers_error_not_enabled">Bingers refused: its API needs the Legend or Icon plan and a token with Read + write access.</string>
+    <string name="settings_bingers_error_rate_limited">Bingers is busy (too many requests). SAMplay tries again shortly.</string>
+    <string name="settings_bingers_error_network">Could not reach Bingers. Check the connection and try again.</string>
+    <string name="settings_bingers_error_server">Bingers could not handle the request. Try again later.</string>
+</resources>

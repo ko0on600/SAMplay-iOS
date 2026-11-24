@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="player_floating_window">Floating window</string>
+    <string name="player_background_audio">Play in background</string>
+    <string name="player_background_audio_on">Background playback on: leaving the app keeps the sound playing</string>
+    <string name="player_background_audio_off">Background playback off</string>
+    <string name="player_background_audio_playing">Audio is playing in the background</string>
+    <string name="player_pip_seek_back">Back 10 seconds</string>
+    <string name="player_pip_seek_forward">Forward 10 seconds</string>
+    <string name="player_floating_permission">Allow SAMplay to display over other apps so the floating window can tuck into the screen edge</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cloud_section">التخزين السحابي</string>
+
+    <string name="webdav_title">WebDAV</string>
+    <string name="webdav_row_title">WebDAV · PikPak</string>
+    <string name="webdav_row_description">شغّل الفيديوهات من PikPak أو Nextcloud أو NAS أو أي محرك WebDAV</string>
+    <string name="webdav_sheet_subtitle">سجّل الدخول باسم المستخدم وكلمة المرور الخاصة بعميل WebDAV في محرك التخزين.</string>
+    <string name="webdav_enable">تفعيل WebDAV</string>
+    <string name="webdav_universal_endpoint">نقطة الوصول العامة</string>
+    <string name="webdav_alternative_endpoint">نقطة وصول بديلة</string>
+    <string name="webdav_alternative_hint">https://nas.local:5006/dav</string>
+    <string name="webdav_legacy_endpoint">نقطة الوصول القديمة</string>
+    <string name="webdav_legacy_note">جرّب هذه إذا تعذّر الاتصال بنقطة الوصول الأساسية.\nالرفع غير مدعوم</string>
+    <string name="webdav_scheme_note">يدعم كلا البروتوكولين HTTP (على المنفذ 80) وHTTPS (على المنفذ 443).</string>
+    <string name="webdav_client">العميل</string>
+    <string name="webdav_advanced">متقدم</string>
+    <string name="webdav_use_https">استخدام HTTPS</string>
+    <string name="webdav_port">المنفذ (اختياري)</string>
+    <string name="webdav_folder">المجلد (اختياري)</string>
+    <string name="webdav_folder_hint">/My Pack</string>
+    <string name="webdav_copy">نسخ</string>
+    <string name="webdav_copied">تم النسخ</string>
+    <string name="webdav_get_credentials">افتح إعدادات WebDAV في PikPak للحصول على اسم المستخدم وكلمة المرور</string>
+    <string name="webdav_disabled_note">فعّل خيار تفعيل WebDAV لربط هذا المحرك.</string>
+    <string name="webdav_pikpak_qualities">جودات فيديو PikPak</string>
+    <string name="webdav_pikpak_qualities_description">اختياري. سجّل بحساب PikPak (إيميل/جوال + كلمة مرور الحساب) عشان تظهر Original وكل الجودات المحوّلة (4K، 1080P، 720P، 480P، …) عند فتح المقطع. كلمة مرور WebDAV وحدها ما تكفي.</string>
+    <string name="webdav_pikpak_account_username">حساب PikPak (إيميل / جوال)</string>
+    <string name="webdav_pikpak_account_password">كلمة مرور حساب PikPak</string>
+    <string name="webdav_pikpak_link_qualities">تفعيل خيارات الجودة</string>
+    <string name="webdav_pikpak_qualities_linked">تم ربط خيارات الجودة</string>
+    <string name="webdav_pikpak_qualities_link_failed">ما قدرنا نربط حساب PikPak للجودات</string>
+    <string name="library_servers_layout_grid">عرض شبكة كبيرة</string>
+    <string name="library_servers_layout_list">عرض قائمة كبيرة</string>
+    <string name="webdav_kind_movie">فيلم</string>
+    <string name="webdav_kind_series">مسلسل</string>
+    <string name="webdav_kind_folder">قسم</string>
+    <string name="webdav_kind_folder_note">قسم عادي: الاسم والصورة التي تختارها فقط، بدون بحث ولا بيانات.</string>
+</resources>

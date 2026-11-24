@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SAMplay: المكتبة › الجهاز -->
+    <string name="library_source_device">الجهاز</string>
+    <string name="device_videos_permission_title">فيديوهاتك</string>
+    <string name="device_videos_permission_message">اسمح لـ SAMplay بعرض الفيديوهات الموجودة على جوالك، أو افتح ملفًا واحدًا.</string>
+    <string name="device_videos_allow">السماح بالوصول</string>
+    <string name="device_videos_open_settings">فتح الإعدادات</string>
+    <string name="device_videos_open_file">فتح ملف</string>
+    <string name="device_videos_partial_message">تظهر هنا الفيديوهات التي اخترتها فقط.</string>
+    <string name="device_videos_partial_manage">إدارة</string>
+    <string name="device_videos_refresh">تحديث</string>
+    <string name="device_videos_search">ابحث في الفيديوهات</string>
+    <string name="device_videos_sort">الترتيب</string>
+    <string name="device_videos_sort_name_asc">الاسم (أ–ي)</string>
+    <string name="device_videos_sort_name_desc">الاسم (ي–أ)</string>
+    <string name="device_videos_sort_newest">الأحدث</string>
+    <string name="device_videos_sort_oldest">الأقدم</string>
+    <string name="device_videos_sort_largest">الأكبر حجمًا</string>
+    <string name="device_videos_sort_smallest">الأصغر حجمًا</string>
+    <string name="device_videos_sort_longest">الأطول</string>
+    <string name="device_videos_sort_shortest">الأقصر</string>
+    <string name="device_videos_continue">تابع المشاهدة</string>
+    <string name="device_videos_folders">المجلدات</string>
+    <string name="device_videos_all_folders">كل المجلدات</string>
+    <plurals name="device_videos_count">
+        <item quantity="zero">لا توجد فيديوهات</item>
+        <item quantity="one">فيديو واحد</item>
+        <item quantity="two">فيديوهان</item>
+        <item quantity="few">%1$d فيديوهات</item>
+        <item quantity="many">%1$d فيديو</item>
+        <item quantity="other">%1$d فيديو</item>
+    </plurals>
+    <string name="device_videos_empty_title">لا توجد فيديوهات على هذا الجوال</string>
+    <string name="device_videos_empty_message">تظهر هنا الفيديوهات التي تنزّلها أو تصوّرها، ويمكنك أيضًا فتح ملف.</string>
+    <string name="device_videos_no_matches">لا توجد فيديوهات تطابق بحثك</string>
+    <string name="device_videos_left">متبقٍ %1$s</string>
+    <string name="device_videos_watched">تمت المشاهدة</string>
+    <string name="device_videos_remove_continue">إزالة من «تابع المشاهدة»</string>
+    <!-- SAMplay 2.0.2: الإخفاء والمقاطع القصيرة والفيديو التالي (كما في SAMplay v32) -->
+    <string name="device_videos_options">خيارات المكتبة</string>
+    <string name="device_videos_options_title">فيديوهات الجهاز</string>
+    <string name="device_videos_choose_folders">اختر المجلدات الظاهرة</string>
+    <string name="device_videos_choose_folders_hint">المجلدات المحددة تظهر في المكتبة.</string>
+    <string name="device_videos_folders_all_shown">كل المجلدات</string>
+    <plurals name="device_videos_hidden_count">
+        <item quantity="zero">لا شيء مخفي</item>
+        <item quantity="one">واحد مخفي</item>
+        <item quantity="two">اثنان مخفيان</item>
+        <item quantity="few">%1$d مخفية</item>
+        <item quantity="many">%1$d مخفيًا</item>
+        <item quantity="other">%1$d مخفي</item>
+    </plurals>
+    <string name="device_videos_hidden_videos">الفيديوهات المخفية</string>
+    <string name="device_videos_hidden_videos_hint">الفيديوهات المحددة تظهر في المكتبة. ألغِ تحديد فيديو لإخفائه من جديد.</string>
+    <string name="device_videos_hidden_videos_empty">لا توجد فيديوهات مخفية. اضغط مطولًا على فيديو لإخفائه.</string>
+    <string name="device_videos_none">لا شيء</string>
+    <string name="device_videos_show_all">إظهار الكل</string>
+    <string name="device_videos_short_clips">إخفاء المقاطع القصيرة</string>
+    <string name="device_videos_short_off">متوقف</string>
+    <string name="device_videos_short_30s">أقصر من 30 ثانية</string>
+    <string name="device_videos_short_1m">أقصر من دقيقة</string>
+    <string name="device_videos_short_3m">أقصر من 3 دقائق</string>
+    <string name="device_videos_short_5m">أقصر من 5 دقائق</string>
+    <string name="device_videos_autoplay_next">تشغيل الفيديو التالي</string>
+    <string name="device_videos_autoplay_next_summary">عند انتهاء الفيديو يبدأ الفيديو التالي في المجلد نفسه.</string>
+    <string name="device_videos_hiding_note">اضغط مطولًا على مجلد أو فيديو لإخفائه. الإخفاء لا يحذف أي ملف.</string>
+    <string name="device_videos_hide_folder">إخفاء هذا المجلد</string>
+    <string name="device_videos_hide_video">إخفاء هذا الفيديو</string>
+    <string name="device_videos_hide_video_folder">إخفاء المجلد %1$s</string>
+    <string name="device_videos_item_hidden">تم إخفاء %1$s</string>
+    <string name="device_videos_undo">تراجع</string>
+    <string name="device_videos_all_hidden_title">كل ما هنا مخفي</string>
+    <string name="device_videos_all_hidden_message">المجلدات والفيديوهات المخفية والمقاطع القصيرة لا تظهر. الإخفاء لا يحذف أي ملف.</string>
+    <string name="player_device_next_label">الفيديو التالي</string>
+    <string name="player_device_next_countdown">يبدأ بعد %1$d</string>
+    <string name="player_device_next_cancel">إلغاء</string>
+</resources>

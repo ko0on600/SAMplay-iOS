@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_advanced_section_crash_log">CRASH LOG</string>
+    <string name="settings_advanced_crash_log">Share crash log</string>
+    <string name="settings_advanced_crash_log_description">Why the app closed lately and the format of the film that was playing, for reporting a problem. Kept only on this device; links are cut to their host</string>
+    <string name="settings_advanced_crash_log_empty">No crashes recorded on this device</string>
+</resources>

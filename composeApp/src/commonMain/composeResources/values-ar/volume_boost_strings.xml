@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_volume_boost_section">المشغّل</string>
+    <string name="settings_volume_boost_title">تعزيز الصوت</string>
+    <string name="settings_volume_boost_description">اسحب شريط الصوت فوق 100% حتى 300% للأفلام الهادئة. يصير أعلى الشريط أحمر أثناء التعزيز، ويرجع التعزيز طبيعي لما تقفل المشغّل.</string>
+    <string name="settings_louder_videos_title">صوت أعلى للمقاطع</string>
+    <string name="settings_louder_videos_description">يرفع صوت كل المقاطع إلى 200% (+10 ديسيبل) مع منع التشويش في المشاهد العالية. أطفئه للصوت الأصلي.</string>
+</resources>

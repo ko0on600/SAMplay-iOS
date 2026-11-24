@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reshaped_sync_section">المزامنة</string>
+    <string name="reshaped_sync_sign_in_title">الربط مع قوقل</string>
+    <string name="reshaped_sync_sign_in_description">اربط جوالك بـ SAMplay TV: الإعدادات ومفاتيح Pro AI تكون نفسها في الاثنين</string>
+    <string name="reshaped_sync_not_configured">تسجيل الدخول بقوقل غير مجهّز في هذه النسخة</string>
+    <string name="reshaped_sync_sign_in_starting">جاري طلب كود الدخول…</string>
+    <string name="reshaped_sync_phone_instruction">اضغط الزر: ينسخ الكود ويفتح قوقل. الصقه إذا طلب قوقل، اختر حسابك، ثم ارجع هنا.</string>
+    <string name="reshaped_sync_phone_button">نسخ الكود وفتح قوقل</string>
+    <string name="reshaped_sync_sign_in_waiting">بانتظار موافقتك…</string>
+    <string name="reshaped_sync_sign_in_declined">انرفض الدخول أو انشال صح الوصول لـ Google Drive. جرّب مرة ثانية واسمح له.</string>
+    <string name="reshaped_sync_sign_in_expired">انتهى الكود. جرّب مرة ثانية لكود جديد.</string>
+    <string name="reshaped_sync_sign_in_failed">ما قدرنا نوصل لقوقل. تأكد من الاتصال وجرّب مرة ثانية.</string>
+    <string name="reshaped_sync_sign_in_refused">قوقل رفض هذا الدخول. غالبًا عميل Google Cloud أو شاشة الموافقة تحتاج تعديل.</string>
+    <string name="reshaped_sync_sign_in_detail">التفاصيل: %1$s</string>
+    <string name="reshaped_sync_try_again">حاول مرة ثانية</string>
+    <string name="reshaped_sync_account_title">حساب قوقل</string>
+    <string name="reshaped_sync_signed_in_as">مسجّل باسم %1$s</string>
+    <string name="reshaped_sync_signed_in">مسجّل الدخول</string>
+    <string name="reshaped_sync_settings_title">مزامنة الإعدادات ومفاتيح Pro AI</string>
+    <string name="reshaped_sync_settings_description">خيارات AutoSync ومفاتيحك لـ Pro AI (Claude وChatGPT وGemini وGrok) وشريط التنقل وغيرها. حجم التخزين المؤقت وتعلية الصوت تبقى لكل جهاز</string>
+    <string name="reshaped_sync_live_tv_title">مزامنة البث المباشر</string>
+    <string name="reshaped_sync_live_tv_description">المصدر وبيانات دخوله والمفضلة وآخر قناة</string>
+    <string name="reshaped_sync_now_title">زامن الحين</string>
+    <string name="reshaped_sync_never">ما تمت المزامنة للحين</string>
+    <string name="reshaped_sync_just_now">تمت المزامنة الحين</string>
+    <string name="reshaped_sync_last_minutes">آخر مزامنة قبل %1$d دقيقة</string>
+    <string name="reshaped_sync_running">جاري المزامنة…</string>
+    <string name="reshaped_sync_failed_network">ما قدرنا نوصل لقوقل. بيحاول مرة ثانية بعدين</string>
+    <string name="reshaped_sync_failed_signed_out">انتهى وصول قوقل. سجّل الدخول من جديد</string>
+    <string name="reshaped_sync_failed_newer">حدّث SAMplay على هذا الجهاز عشان تكمل المزامنة</string>
+    <string name="reshaped_sync_sign_out">تسجيل الخروج من قوقل</string>
+    <string name="reshaped_sync_sign_out_description">هذا الجوال يوقف المزامنة. اللي انزامن يبقى في حسابك في قوقل.</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle_extra_search_online">بحث أونلاين</string>
+    <string name="subtitle_extra_load_file">من ملفات الجهاز</string>
+    <string name="subtitle_extra_save">حفظ الترجمة</string>
+    <string name="subtitle_search_title">البحث عن ترجمة أونلاين</string>
+    <string name="subtitle_search_hint">اسم الفيلم أو المسلسل</string>
+    <string name="subtitle_search_no_titles">لا توجد نتائج</string>
+    <string name="subtitle_search_no_subtitles">لا توجد ترجمات لهذا العنوان</string>
+    <string name="subtitle_search_failed">فشل البحث. تحقق من الاتصال.</string>
+    <string name="subtitle_search_season">الموسم</string>
+    <string name="subtitle_search_episode">الحلقة</string>
+    <string name="subtitle_search_find">ابحث عن الترجمات</string>
+    <string name="subtitle_search_movie">فيلم</string>
+    <string name="subtitle_search_series">مسلسل</string>
+    <string name="subtitle_file_source">ملف من الجهاز</string>
+    <string name="subtitle_saved">تم حفظ الترجمة</string>
+    <string name="subtitle_save_failed">تعذّر حفظ الترجمة</string>
+    <string name="subtitle_save_with_sync">مع الموازنة (%1$s)</string>
+    <string name="subtitle_save_original">الأصلية</string>
+    <string name="subtitle_save_cancel">إلغاء</string>
+    <string name="subtitle_saved_with_sync">تم حفظ الترجمة مع الموازنة</string>
+    <string name="subtitle_save_sync_failed">ما قدرت أضيف الموازنة لملف الترجمة هذا</string>
+    <string name="subtitle_load_failed">تعذّر تحميل ملف الترجمة</string>
+</resources>

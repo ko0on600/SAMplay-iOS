@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SAMplay: Library › On this device -->
+    <string name="library_source_device">On device</string>
+    <string name="device_videos_permission_title">Your videos</string>
+    <string name="device_videos_permission_message">Allow SAMplay to show the videos on this phone, or open a single file.</string>
+    <string name="device_videos_allow">Allow access</string>
+    <string name="device_videos_open_settings">Open settings</string>
+    <string name="device_videos_open_file">Open file</string>
+    <string name="device_videos_partial_message">Showing only the videos you picked.</string>
+    <string name="device_videos_partial_manage">Manage</string>
+    <string name="device_videos_refresh">Refresh</string>
+    <string name="device_videos_search">Search videos</string>
+    <string name="device_videos_sort">Sort</string>
+    <string name="device_videos_sort_name_asc">Name (A–Z)</string>
+    <string name="device_videos_sort_name_desc">Name (Z–A)</string>
+    <string name="device_videos_sort_newest">Newest</string>
+    <string name="device_videos_sort_oldest">Oldest</string>
+    <string name="device_videos_sort_largest">Largest</string>
+    <string name="device_videos_sort_smallest">Smallest</string>
+    <string name="device_videos_sort_longest">Longest</string>
+    <string name="device_videos_sort_shortest">Shortest</string>
+    <string name="device_videos_continue">Continue watching</string>
+    <string name="device_videos_folders">Folders</string>
+    <string name="device_videos_all_folders">All folders</string>
+    <plurals name="device_videos_count">
+        <item quantity="one">%1$d video</item>
+        <item quantity="other">%1$d videos</item>
+    </plurals>
+    <string name="device_videos_empty_title">No videos on this phone</string>
+    <string name="device_videos_empty_message">Videos you download or record show up here. You can also open a file.</string>
+    <string name="device_videos_no_matches">No videos match your search</string>
+    <string name="device_videos_left">%1$s left</string>
+    <string name="device_videos_watched">Watched</string>
+    <string name="device_videos_remove_continue">Remove from Continue watching</string>
+    <!-- SAMplay 2.0.2: hiding, short clips, the next video (as in SAMplay v32) -->
+    <string name="device_videos_options">Library options</string>
+    <string name="device_videos_options_title">Videos on this device</string>
+    <string name="device_videos_choose_folders">Choose folders to show</string>
+    <string name="device_videos_choose_folders_hint">Ticked folders show in the library.</string>
+    <string name="device_videos_folders_all_shown">All folders</string>
+    <plurals name="device_videos_hidden_count">
+        <item quantity="one">%1$d hidden</item>
+        <item quantity="other">%1$d hidden</item>
+    </plurals>
+    <string name="device_videos_hidden_videos">Hidden videos</string>
+    <string name="device_videos_hidden_videos_hint">Ticked videos show in the library. Untick one to hide it again.</string>
+    <string name="device_videos_hidden_videos_empty">No hidden videos. Long-press a video to hide it.</string>
+    <string name="device_videos_none">None</string>
+    <string name="device_videos_show_all">Show all</string>
+    <string name="device_videos_short_clips">Hide short clips</string>
+    <string name="device_videos_short_off">Off</string>
+    <string name="device_videos_short_30s">Shorter than 30 seconds</string>
+    <string name="device_videos_short_1m">Shorter than 1 minute</string>
+    <string name="device_videos_short_3m">Shorter than 3 minutes</string>
+    <string name="device_videos_short_5m">Shorter than 5 minutes</string>
+    <string name="device_videos_autoplay_next">Play the next video</string>
+    <string name="device_videos_autoplay_next_summary">When a video ends, the next one in its folder plays.</string>
+    <string name="device_videos_hiding_note">Long-press a folder or a video to hide it. Hiding never deletes files.</string>
+    <string name="device_videos_hide_folder">Hide this folder</string>
+    <string name="device_videos_hide_video">Hide this video</string>
+    <string name="device_videos_hide_video_folder">Hide the folder %1$s</string>
+    <string name="device_videos_item_hidden">%1$s is hidden</string>
+    <string name="device_videos_undo">Undo</string>
+    <string name="device_videos_all_hidden_title">Everything here is hidden</string>
+    <string name="device_videos_all_hidden_message">Hidden folders, hidden videos and short clips are not shown. Hiding never deletes files.</string>
+    <string name="player_device_next_label">Next video</string>
+    <string name="player_device_next_countdown">Playing in %1$d</string>
+    <string name="player_device_next_cancel">Cancel</string>
+</resources>

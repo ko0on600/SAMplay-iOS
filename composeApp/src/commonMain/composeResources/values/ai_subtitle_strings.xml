@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nuvio RS (from SAMplay): AI subtitles. -->
+    <string name="subtitle_extra_ai">AI</string>
+    <string name="ai_panel_title">AI subtitles</string>
+    <string name="ai_action_generate">Create with AI</string>
+    <string name="ai_action_generate_desc">Makes subtitles from the video\'s own audio on this device (whisper). A whole film takes a while; lines show up as they are made.</string>
+    <string name="ai_action_translate">Basic translation (free)</string>
+    <string name="ai_action_translate_desc">Translates the subtitle shown now with Google's free translation (ML Kit on the device without internet).</string>
+    <string name="ai_action_pro">Pro AI translation</string>
+    <string name="ai_action_pro_desc">Claude, ChatGPT, Gemini or Grok translates it in context like a human subtitler, on your own API key.</string>
+    <string name="ai_generate_unsupported">Create with AI needs a 64-bit ARMv8.2 processor, which this device does not have.</string>
+    <string name="ai_pro_key_hint">%1$s API key (%2$s)</string>
+    <string name="ai_pro_key_save">Save key</string>
+    <string name="ai_spoken_language">Spoken language</string>
+    <string name="ai_spoken_auto">Detect</string>
+    <string name="ai_stop">Stop</string>
+    <string name="ai_target_language">Translate into</string>
+    <string name="ai_status_downloading_model">Downloading the speech model…</string>
+    <string name="ai_status_extracting">Reading the audio…</string>
+    <string name="ai_status_transcribing">Writing subtitles…</string>
+    <string name="ai_status_downloading_language">Downloading the language…</string>
+    <string name="ai_status_translating">Translating…</string>
+    <string name="ai_status_pro_translating">Pro AI is translating…</string>
+    <string name="ai_status_done">Done: %1$d lines</string>
+    <string name="ai_status_failed">Failed: %1$s</string>
+    <string name="ai_status_no_audio">No speech could be read from this video.</string>
+    <string name="ai_status_no_subtitle">Choose an add-on or file subtitle first.</string>
+    <string name="ai_status_unsupported_language">This language can\'t be translated on the device.</string>
+    <string name="ai_status_pro_key">Add an API key for this service first.</string>
+    <string name="ai_status_pro_invalid">The API key was refused.</string>
+    <string name="ai_status_pro_refused">The AI declined to translate this subtitle.</string>
+    <string name="ai_label_generated">AI (%1$s)</string>
+    <string name="ai_label_translated">Translated (%1$s)</string>
+    <string name="ai_label_pro">Pro AI (%1$s)</string>
+    <string name="ai_pro_provider">Pro AI service</string>
+    <string name="ai_pro_key_change">Key and model</string>
+    <string name="ai_pro_model_hint">Model (blank: %1$s)</string>
+
+    <string name="ai_way_this_subtitle">Translate this subtitle</string>
+    <string name="ai_way_listening">Translate by listening</string>
+    <string name="ai_listen_basic">Listen and translate (basic)</string>
+    <string name="ai_listen_basic_desc">Hears the video on this device (whisper) and translates what is said with the free translation.</string>
+    <string name="ai_listen_pro">Listen and translate with Pro AI</string>
+    <string name="ai_listen_pro_desc">Hears the video on this device (whisper); Pro AI translates what is said, on your own key.</string>
+    <string name="ai_show_title">Show</string>
+    <string name="ai_show_translation_only">Translation only</string>
+    <string name="ai_show_both">Both lines</string>
+    <string name="ai_save_copies">Save a copy on the device</string>
+    <string name="ai_save_now">Save this translation now</string>
+    <string name="ai_saved_to">Saved: %1$s</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle_extra_ai">AI</string>
+    <string name="ai_panel_title">ترجمة بالذكاء الاصطناعي</string>
+    <string name="ai_action_generate">إنشاء AI</string>
+    <string name="ai_action_generate_desc">يصنع ترجمة من صوت الفيديو نفسه على الجهاز (Whisper). الفيلم الكامل ياخذ وقت، والأسطر تظهر أول بأول.</string>
+    <string name="ai_action_translate">ترجمة أساسية (مجانية)</string>
+    <string name="ai_action_translate_desc">يترجم الترجمة المعروضة الحين بترجمة قوقل المجانية (وML Kit على الجهاز بدون نت).</string>
+    <string name="ai_action_pro">ترجمة Pro AI</string>
+    <string name="ai_action_pro_desc">يترجمها Claude أو ChatGPT أو Gemini أو Grok بالسياق مثل مترجم محترف، بمفتاح API الخاص فيك.</string>
+    <string name="ai_generate_unsupported">إنشاء AI يحتاج معالج 64-بت ARMv8.2، وهذا الجهاز ما يدعمه.</string>
+    <string name="ai_pro_key_hint">مفتاح %1$s API ‏(%2$s)</string>
+    <string name="ai_pro_key_save">حفظ المفتاح</string>
+    <string name="ai_spoken_language">لغة الكلام</string>
+    <string name="ai_spoken_auto">تلقائي</string>
+    <string name="ai_stop">إيقاف</string>
+    <string name="ai_target_language">الترجمة إلى</string>
+    <string name="ai_status_downloading_model">تحميل نموذج الكلام…</string>
+    <string name="ai_status_extracting">قراءة الصوت…</string>
+    <string name="ai_status_transcribing">كتابة الترجمة…</string>
+    <string name="ai_status_downloading_language">تحميل اللغة…</string>
+    <string name="ai_status_translating">جاري الترجمة…</string>
+    <string name="ai_status_pro_translating">Pro AI يترجم…</string>
+    <string name="ai_status_done">تم: %1$d سطر</string>
+    <string name="ai_status_failed">فشل: %1$s</string>
+    <string name="ai_status_no_audio">ما قدرنا نقرأ كلام من هذا الفيديو.</string>
+    <string name="ai_status_no_subtitle">اختر ترجمة خارجية أو ملف أول.</string>
+    <string name="ai_status_unsupported_language">هذي اللغة ما تنترجم على الجهاز.</string>
+    <string name="ai_status_pro_key">أضف مفتاح API لهذي الخدمة أول.</string>
+    <string name="ai_status_pro_invalid">المفتاح مرفوض.</string>
+    <string name="ai_status_pro_refused">الذكاء الاصطناعي رفض يترجم هذي الترجمة.</string>
+    <string name="ai_label_generated">AI ‏(%1$s)</string>
+    <string name="ai_label_translated">مترجمة (%1$s)</string>
+    <string name="ai_label_pro">Pro AI ‏(%1$s)</string>
+    <string name="ai_pro_provider">خدمة Pro AI</string>
+    <string name="ai_pro_key_change">المفتاح والموديل</string>
+    <string name="ai_pro_model_hint">الموديل (فارغ: %1$s)</string>
+
+    <string name="ai_way_this_subtitle">ترجمة الترجمة الحالية</string>
+    <string name="ai_way_listening">الترجمة بالاستماع</string>
+    <string name="ai_listen_basic">استماع وترجمة (أساسية)</string>
+    <string name="ai_listen_basic_desc">يسمع الفيديو على جهازك (Whisper) ويترجم الكلام بالترجمة المجانية.</string>
+    <string name="ai_listen_pro">استماع وترجمة Pro AI</string>
+    <string name="ai_listen_pro_desc">يسمع الفيديو على جهازك (Whisper) ويترجم Pro AI الكلام بمفتاحك.</string>
+    <string name="ai_show_title">العرض</string>
+    <string name="ai_show_translation_only">الترجمة فقط</string>
+    <string name="ai_show_both">السطرين</string>
+    <string name="ai_save_copies">حفظ نسخة في الجهاز</string>
+    <string name="ai_save_now">حفظ الترجمة في الجهاز</string>
+    <string name="ai_saved_to">انحفظت: %1$s</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="webdav_info_action">Edit poster and info</string>
+    <string name="webdav_info_link">Link from TMDB, IMDb, elCinema or TheTVDB (or an image link)</string>
+    <string name="webdav_info_fetch">Fetch</string>
+    <string name="webdav_info_search">Search by name</string>
+    <string name="webdav_info_search_action">Search</string>
+    <string name="webdav_info_details">Details</string>
+    <string name="webdav_info_name">Title</string>
+    <string name="webdav_info_poster">Poster image link</string>
+    <string name="webdav_info_pick_image">Choose from photos</string>
+    <string name="webdav_info_background">Background image link</string>
+    <string name="webdav_info_year">Year</string>
+    <string name="webdav_info_imdb">IMDb id (tt…) for episode titles and subtitles</string>
+    <string name="webdav_info_description">Story</string>
+    <string name="webdav_info_save">Save</string>
+    <string name="webdav_info_reset">Remove my changes</string>
+    <string name="webdav_info_cancel">Cancel</string>
+    <string name="webdav_info_not_found">Nothing found at this link</string>
+    <string name="webdav_info_failed">Couldn\'t reach the site. Check the connection.</string>
+    <string name="webdav_info_no_results">No results</string>
+</resources>

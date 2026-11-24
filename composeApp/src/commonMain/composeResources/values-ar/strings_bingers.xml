@@ -1,0 +1,19 @@
+<resources>
+    <string name="settings_bingers_connect">ربط Bingers</string>
+    <string name="settings_bingers_disconnect">فصل</string>
+    <string name="settings_bingers_connected_as">متصل باسم %1$s</string>
+    <string name="settings_bingers_account_fallback">حسابك في Bingers</string>
+    <string name="settings_bingers_connected_description">SAMplay يسجّل مشاهداتك في Bingers: كل تشغيل يتوقف عند 80% أو أكثر، وكل شي تعلّمه كمُشاهَد. وإلغاء العلامة يشيله من هناك بعد.</string>
+    <string name="settings_bingers_sign_in_description">من bingers.app/integrations أنشئ رمز وصول شخصي (Personal access token) بصلاحية Read + write، وبعدين الصقه هنا. واجهة Bingers تحتاج اشتراك Legend أو Icon.</string>
+    <string name="settings_bingers_token_label">رمز الوصول الشخصي</string>
+    <string name="settings_bingers_token_placeholder">bng_pat_…</string>
+    <string name="settings_bingers_create_token">إنشاء رمز</string>
+    <string name="settings_bingers_disconnect_description">SAMplay يوقف التسجيل في Bingers لهذا الملف وينسى الرمز. اللي تسجّل في Bingers يبقى.</string>
+    <string name="settings_bingers_last_recorded">آخر تسجيل: %1$s</string>
+    <string name="settings_bingers_error_invalid_token">Bingers ما قبل هذا الرمز. تأكد منه أو أنشئ رمز جديد.</string>
+    <string name="settings_bingers_error_read_only">هذا الرمز للقراءة بس. أنشئ رمز بصلاحية Read + write.</string>
+    <string name="settings_bingers_error_not_enabled">Bingers رفض الطلب: واجهته تحتاج اشتراك Legend أو Icon ورمز بصلاحية Read + write.</string>
+    <string name="settings_bingers_error_rate_limited">Bingers مشغول (طلبات كثيرة). SAMplay بيعيد المحاولة بعد شوي.</string>
+    <string name="settings_bingers_error_network">ما قدرنا نوصل لـ Bingers. تأكد من الاتصال وحاول مرة ثانية.</string>
+    <string name="settings_bingers_error_server">Bingers ما قدر يعالج الطلب. حاول بعدين.</string>
+</resources>

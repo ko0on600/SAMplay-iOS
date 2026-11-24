@@ -1,0 +1,11 @@
+<resources>
+    <string name="home_section_move_up">Move up</string>
+    <string name="home_section_move_down">Move down</string>
+    <string name="home_section_hide">Hide this section</string>
+    <string name="home_section_hidden_toast">“%1$s” hidden. Show it again from Hidden sections at the bottom of Home.</string>
+    <string name="home_section_manage">Manage sections</string>
+    <string name="home_hidden_sections_footer">Hidden sections: %1$d · Manage</string>
+    <string name="home_hidden_sections_empty">No hidden sections. Long-press a section title to hide it or move it up or down.</string>
+    <string name="home_hidden_sections_hint">Tap a section to show it again.</string>
+    <string name="home_hidden_sections_show_all">Show all</string>
+</resources>
