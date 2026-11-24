@@ -54,12 +54,13 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 `env NUVIO_IOS_DISTRIBUTION=full SAMPLAY_LOCAL_KLIBS=/workspace/samplay-ios/klibs ./gradlew
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
-## NEXT ACTION
-Run 45447920608 (debug Kotlin, 60 min) also timed out inside "Build unsigned IPA" (konan cache WAS
-saved this time). Pushed: Kotlin framework linked in its own step (`./gradlew
-:composeApp:linkDebugFrameworkIosArm64 --console=plain`, timestamped), timeout 120. Follow the newest
-wip-p2 run: if green -> verify.txt, Drive Xplaier/"SAMplay iOS", PC copy, merge main, report.
-If the link step alone is >60 min, look at its task timings in the job log.
+## NEXT ACTION (BLOCKED on GitHub billing)
+Run 45459333662 never started: "The job was not started because recent account payments have failed
+or your spending limit needs to be increased" — the account's Actions minutes are used up (private
+repo, macOS = 10x). Needs Sami: raise the Actions spending limit, or approve making the repo public
+(free macOS minutes; secrets stay in repo secrets, keystore is not in git), or wait for the monthly
+reset. Then re-run: `gh workflow run ios.yml -R ko0on600/SAMplay-iOS --ref wip-p2` (split link
+step + 120 min timeout + saved konan cache are already in place).
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
