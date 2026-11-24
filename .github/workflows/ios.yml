@@ -65,3 +65,11 @@ jobs:
             build/verify.txt
             build/xcodebuild.log
           if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cinterop-klibs
+          path: |
+            composeApp/build/classes/kotlin/iosArm64/main/cinterop/*.klib
+            composeApp/build/libs/*cinterop*.klib
+          if-no-files-found: warn
