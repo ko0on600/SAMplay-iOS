@@ -54,18 +54,10 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 `env NUVIO_IOS_DISTRIBUTION=full SAMPLAY_LOCAL_KLIBS=/workspace/samplay-ios/klibs ./gradlew
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
-## NEXT ACTION (BLOCKED: going public needs a decision)
-Sami chose "make the repo public" for free Actions minutes. Pre-public secret audit (gitleaks 8.21.2
-over all 34 commits/branches + regex scan of `git log -p --all`):
-- No local.properties / keystore.properties / .jks / .keystore / .p12 / .p8 / provisioning profile
-  ever committed (only Let's Encrypt root CA .pem files, public). No Google/AI/GitHub/TMDB/
-  Supabase/Trakt/Seekr key values (all generated from local.properties at build time).
-- FOUND: a hard-coded PikPak OAuth client id + client secret in
-  composeApp/src/commonMain/.../servers/webdav/PikPakApiClient.kt (SAMplay's own code, not in the
-  public upstream; also shipped inside the Android APK). In history since the first commits.
-Repo NOT made public. Options: (a) Sami accepts it as public (it's an app-embedded client
-credential, extractable from the APK anyway); (b) move it to local.properties/the CI secret and
-rewrite history (force-push main + wip-p2) before going public; (c) raise the Actions spending limit.
+## NEXT ACTION
+Repo made PUBLIC 2026-11-25 00:18 Riyadh (Sami chose it, accepting the PikPak client credential in
+PikPakApiClient.kt being visible; audit found nothing else). Run 45489580638 (wip-p2) dispatched —
+follow it; on green: verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
