@@ -108,6 +108,7 @@ class JSONArray() {
     fun put(value: Any?): JSONArray { list += value; return this }
     fun length(): Int = list.size
     fun opt(i: Int): Any? = list.getOrNull(i)
+    fun isNull(i: Int): Boolean = list.getOrNull(i) == null
     fun get(i: Int): Any = list.getOrNull(i) ?: throw JSONException("No value at $i")
     fun optString(i: Int, fallback: String = ""): String = list.getOrNull(i)?.let { if (it is String) it else it.toString() } ?: fallback
     fun getString(i: Int): String = list.getOrNull(i)?.let { if (it is String) it else it.toString() } ?: throw JSONException("No value at $i")
