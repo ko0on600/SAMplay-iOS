@@ -248,11 +248,12 @@ final class RootComposeViewController: UIViewController {
 // MARK: - UIKit fallback
 
 struct ComposeView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
+    typealias UIViewControllerType = RootComposeViewController
+    func makeUIViewController(context: Context) -> RootComposeViewController {
         NuvioComposeHost.wrap(MainViewControllerKt.MainViewController())
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: RootComposeViewController, context: Context) {}
 }
 
 // MARK: - Native iOS navigation
@@ -773,13 +774,14 @@ final class AppNavigationCoordinator: ObservableObject {
 
 @available(iOS 16.0, *)
 struct NativeNavComposeView: UIViewControllerRepresentable {
+    typealias UIViewControllerType = RootComposeViewController
     let tab: NuvioAppTab
     let usesNativeTabBar: Bool
     let usesTabletFloatingTabBar: Bool
     let coordinator: TabNavigationCoordinator
     let appCoordinator: AppNavigationCoordinator
 
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context: Context) -> RootComposeViewController {
         let verticalBar = VerticalBar()
         let controller = MainViewControllerKt.MainViewController(
             initialTabName: tab.rawValue,
@@ -823,14 +825,15 @@ struct NativeNavComposeView: UIViewControllerRepresentable {
         )
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: RootComposeViewController, context: Context) {}
 }
 
 @available(iOS 16.0, *)
 struct AppGateComposeView: UIViewControllerRepresentable {
+    typealias UIViewControllerType = RootComposeViewController
     let appCoordinator: AppNavigationCoordinator
 
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context: Context) -> RootComposeViewController {
         let verticalBar = VerticalBar()
         let controller = MainViewControllerKt.AppGateViewController(
             appGateController: appCoordinator.appGateController,
@@ -853,16 +856,17 @@ struct AppGateComposeView: UIViewControllerRepresentable {
         return NuvioComposeHost.wrap(controller, backgroundColor: .clear, verticalBar: verticalBar)
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: RootComposeViewController, context: Context) {}
 }
 
 @available(iOS 16.0, *)
 struct DetailComposeView: UIViewControllerRepresentable {
+    typealias UIViewControllerType = RootComposeViewController
     let route: AppRoute
     let coordinator: TabNavigationCoordinator
     let appCoordinator: AppNavigationCoordinator
 
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context: Context) -> RootComposeViewController {
         let verticalBar = VerticalBar()
         let hinge = Hinge()
         let controller = MainViewControllerKt.ScreenViewController(
@@ -895,7 +899,7 @@ struct DetailComposeView: UIViewControllerRepresentable {
         )
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: RootComposeViewController, context: Context) {}
 }
 
 @available(iOS 16.0, *)

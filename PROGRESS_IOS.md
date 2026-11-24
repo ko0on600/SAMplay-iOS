@@ -55,12 +55,12 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Cancelled 45489580638 (was re-linking Release Kotlin inside a Release xcodebuild). Pushed fix:
-build_unsigned_ipa.sh uses -configuration Debug when KOTLIN_FRAMEWORK_BUILD_TYPE=debug, plus
--jobs; the Xcode embedAndSign script phase prints CONFIGURATION and uses --console=plain so
-the log can show linkDebug UP-TO-DATE, not linkRelease. Follow the newest wip-p2 run: once
-"Build unsigned IPA" starts, confirm linkReleaseFrameworkIosArm64 is absent. On green:
-verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
+Cancelled 45489580638. Run 45505896383 (c857627) confirmed the Debug fix: embedAndSign used
+CONFIGURATION=Debug, ran linkDebugFrameworkIosArm64 (not linkRelease), embedAndSign SKIPPED
+(already produced). IPA/Xcode then failed in Swift (Xcode 26): ComposeView and the other
+UIViewControllerRepresentable wrappers did not conform because wrap() returns
+RootComposeViewController while make/update were declared as UIViewController. Fixed those
+signatures. Follow the newest wip-p2 run; on green: verify_ipa, Drive, merge main.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
