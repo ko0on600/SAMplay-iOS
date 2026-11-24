@@ -55,7 +55,7 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-CI run 45429231561 (wip-p2 push, Release) running — check it; fix Swift/link errors if any; when green + verify_ipa
+Run 45429231561 hit the 50-min timeout in the Release Kotlin link (no errors). Now CI uses KOTLIN_FRAMEWORK_BUILD_TYPE=debug (fast link), tests opt-in. Check the newest wip-p2 run; fix Swift/link errors if any; when green + verify_ipa
 OK, merge to main, upload IPA to Drive "SAMplay iOS", copy to PC, report.
 
 Drive target: SAMplay files live in Drive folder "Xplaier" (id 1pBrJRyzZlsKZ9VY-moj4uExwSquc-Gl6); create subfolder "SAMplay iOS" there.

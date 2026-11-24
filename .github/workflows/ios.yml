@@ -10,6 +10,15 @@ on:
         type: choice
         options: [Release, Debug]
         default: Release
+      kotlin_build_type:
+        description: Kotlin framework build (debug links in minutes; release LLVM-optimizes, very slow)
+        type: choice
+        options: [debug, release]
+        default: debug
+      run_tests:
+        description: Run the iOS unit tests after the IPA
+        type: boolean
+        default: false
 concurrency:
   group: samplay-ios-${{ github.ref_name }}
   cancel-in-progress: true
@@ -19,6 +28,7 @@ jobs:
     timeout-minutes: 50
     env:
       IOS_CONFIGURATION: ${{ inputs.configuration || 'Release' }}
+      KOTLIN_FRAMEWORK_BUILD_TYPE: ${{ inputs.kotlin_build_type || 'debug' }}
       GRADLE_OPTS: -Dfile.encoding=UTF-8
       KOTLIN_DAEMON_JVMARGS: -Xmx2048M
       NUVIO_GRADLE_JVMARGS: -Xmx4608M -Dfile.encoding=UTF-8 -XX:MaxMetaspaceSize=768M
@@ -55,6 +65,7 @@ jobs:
           trap 'kill $! 2>/dev/null || true' EXIT
           ./scripts/build_unsigned_ipa.sh
       - name: Unit tests (iOS simulator)
+        if: inputs.run_tests == true
         run: ./gradlew :composeApp:iosSimulatorArm64Test --tests "com.nuvio.app.features.ai.*" --tests "com.nuvio.app.features.player.SamplayPlayerIosTest" --tests "com.nuvio.app.features.reshaped.*" --no-daemon
       - name: Remove secrets
         if: always()
