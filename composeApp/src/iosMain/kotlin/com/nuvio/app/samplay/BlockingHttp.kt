@@ -9,6 +9,8 @@ import platform.Foundation.NSURLSession
 import platform.Foundation.NSURLSessionConfiguration
 import platform.Foundation.dataTaskWithRequest
 import platform.Foundation.setValue
+import platform.Foundation.HTTPMethod
+import platform.Foundation.HTTPBody
 import platform.darwin.DISPATCH_TIME_FOREVER
 import platform.darwin.dispatch_semaphore_create
 import platform.darwin.dispatch_semaphore_signal
@@ -42,7 +44,7 @@ fun blockingHttp(
     val nsUrl = NSURL.URLWithString(url) ?: throw IOException("Bad URL")
     val request = NSMutableURLRequest.requestWithURL(nsUrl)
     request.HTTPMethod = method
-    request.timeoutInterval = timeoutSeconds
+    request.setTimeoutInterval(timeoutSeconds)
     headers.forEach { (k, v) -> request.setValue(v, forHTTPHeaderField = k) }
     if (body != null) request.HTTPBody = body.toNSData()
     val semaphore = dispatch_semaphore_create(0)

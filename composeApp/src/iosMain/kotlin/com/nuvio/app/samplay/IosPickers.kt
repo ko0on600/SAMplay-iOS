@@ -1,5 +1,6 @@
 package com.nuvio.app.samplay
 
+import platform.Foundation.lastPathComponent
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSTemporaryDirectory
@@ -83,10 +84,7 @@ object IosPickers {
      */
     fun exportFile(path: String, onDone: (Boolean) -> Unit) = onMain {
         val presenter = topViewController() ?: return@onMain onDone(false)
-        val picker = UIDocumentPickerViewController(
-            URLs = listOf(NSURL.fileURLWithPath(path)),
-            inMode = UIDocumentPickerMode.UIDocumentPickerModeExportToService,
-        )
+        val picker = UIDocumentPickerViewController(forExportingURLs = listOf(NSURL.fileURLWithPath(path)), asCopy = true)
         val delegate = object : NSObject(), UIDocumentPickerDelegateProtocol {
             override fun documentPicker(controller: UIDocumentPickerViewController, didPickDocumentsAtURLs: List<*>) {
                 documentDelegate = null
@@ -127,7 +125,7 @@ object IosPickers {
             }
         }
         imageDelegate = delegate
-        picker.delegate = delegate
+        picker.setDelegate(delegate)
         presenter.presentViewController(picker, animated = true, completion = null)
     }
 

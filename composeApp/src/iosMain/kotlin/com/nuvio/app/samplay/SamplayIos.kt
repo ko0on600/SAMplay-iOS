@@ -23,6 +23,7 @@ import platform.Foundation.create
 import platform.Foundation.dataWithBytes
 import platform.Foundation.timeIntervalSince1970
 import platform.Foundation.writeToFile
+import platform.Foundation.temporaryDirectory
 import platform.posix.memcpy
 
 /** SAMplay iOS: small platform helpers for the parts of SAMplay that were Android-only. */

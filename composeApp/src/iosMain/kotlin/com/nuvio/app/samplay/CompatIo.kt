@@ -24,8 +24,9 @@ object Charsets { val UTF_8: String = "UTF-8" }
 /** A java.io.File stand-in over NSFileManager, for SAMplay code written against java.io. */
 @OptIn(ExperimentalForeignApi::class)
 class File(val path: String) {
-    constructor(parent: File, child: String) : this(parent.path.trimEnd('/') + "/" + child)
-    constructor(parent: String, child: String) : this(parent.trimEnd('/') + "/" + child)
+    // Like java.io.File: a null parent means [child] alone.
+    constructor(parent: File?, child: String) : this(if (parent == null) child else parent.path.trimEnd('/') + "/" + child)
+    constructor(parent: String?, child: String) : this(if (parent == null) child else parent.trimEnd('/') + "/" + child)
 
     private val fm get() = NSFileManager.defaultManager
     val name: String get() = path.trimEnd('/').substringAfterLast('/')
