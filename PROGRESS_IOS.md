@@ -54,13 +54,18 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 `env NUVIO_IOS_DISTRIBUTION=full SAMPLAY_LOCAL_KLIBS=/workspace/samplay-ios/klibs ./gradlew
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
-## NEXT ACTION (BLOCKED on GitHub billing)
-Run 45459333662 never started: "The job was not started because recent account payments have failed
-or your spending limit needs to be increased" — the account's Actions minutes are used up (private
-repo, macOS = 10x). Needs Sami: raise the Actions spending limit, or approve making the repo public
-(free macOS minutes; secrets stay in repo secrets, keystore is not in git), or wait for the monthly
-reset. Then re-run: `gh workflow run ios.yml -R ko0on600/SAMplay-iOS --ref wip-p2` (split link
-step + 120 min timeout + saved konan cache are already in place).
+## NEXT ACTION (BLOCKED: going public needs a decision)
+Sami chose "make the repo public" for free Actions minutes. Pre-public secret audit (gitleaks 8.21.2
+over all 34 commits/branches + regex scan of `git log -p --all`):
+- No local.properties / keystore.properties / .jks / .keystore / .p12 / .p8 / provisioning profile
+  ever committed (only Let's Encrypt root CA .pem files, public). No Google/AI/GitHub/TMDB/
+  Supabase/Trakt/Seekr key values (all generated from local.properties at build time).
+- FOUND: a hard-coded PikPak OAuth client id + client secret in
+  composeApp/src/commonMain/.../servers/webdav/PikPakApiClient.kt (SAMplay's own code, not in the
+  public upstream; also shipped inside the Android APK). In history since the first commits.
+Repo NOT made public. Options: (a) Sami accepts it as public (it's an app-embedded client
+credential, extractable from the APK anyway); (b) move it to local.properties/the CI secret and
+rewrite history (force-push main + wip-p2) before going public; (c) raise the Actions spending limit.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
