@@ -55,12 +55,11 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Cancelled 45489580638. Run 45505896383 (c857627) confirmed the Debug fix: embedAndSign used
-CONFIGURATION=Debug, ran linkDebugFrameworkIosArm64 (not linkRelease), embedAndSign SKIPPED
-(already produced). IPA/Xcode then failed in Swift (Xcode 26): ComposeView and the other
-UIViewControllerRepresentable wrappers did not conform because wrap() returns
-RootComposeViewController while make/update were declared as UIViewController. Fixed those
-signatures. Follow the newest wip-p2 run; on green: verify_ipa, Drive, merge main.
+Run 45507665804 failed in Swift (same 4 UIViewControllerRepresentable types). Root cause:
+`import ComposeApp` exports Kotlin `com.nuvio.app.samplay.Context`, which shadows
+`UIViewControllerRepresentable.Context`. Signatures now use
+`UIViewControllerRepresentableContext<...>`. Follow the newest wip-p2 run. On green:
+verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
