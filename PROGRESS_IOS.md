@@ -55,12 +55,11 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Runs 45429231561 (Release Kotlin) and 45439984032 (debug Kotlin) both hit the job timeout while
-still inside the Gradle compile/link step (no compile errors reported; Kotlin compiles locally).
-Cause likely: cold ~/.konan (cache never saved since no job ever succeeded) + K/N static-cache
-building. Pushed: konan cache saved with if: always(), cacheKind.iosArm64=none. Check the newest
-wip-p2 run (45447920608, started 20:23 Riyadh, timeout 60 min = 21:23; still in "Build unsigned IPA" at 20:52). Local fact: compileKotlinIosArm64 takes only 1m41 on the box with a 4.6G heap, so the CI time goes into the framework LINK (K/N codegen of all deps), not compile. If it times out, compare timings (xcodebuild.log) and consider raising
-timeout-minutes (queue start is just slow, 5-10 min, not blocked by the timeout value).
+Run 45447920608 (debug Kotlin, 60 min) also timed out inside "Build unsigned IPA" (konan cache WAS
+saved this time). Pushed: Kotlin framework linked in its own step (`./gradlew
+:composeApp:linkDebugFrameworkIosArm64 --console=plain`, timestamped), timeout 120. Follow the newest
+wip-p2 run: if green -> verify.txt, Drive Xplaier/"SAMplay iOS", PC copy, merge main, report.
+If the link step alone is >60 min, look at its task timings in the job log.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
