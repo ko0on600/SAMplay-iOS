@@ -51,7 +51,7 @@ class StreamConnectionFitTest {
     }
 
     @Test
-    fun `only heavy streams move, and both parts keep their order`() {
+    fun `only heavy streams move and both parts keep their order`() {
         // 30 Mbps connection, 120 min runtime: anything above 20 Mbps average is demoted.
         val fit = StreamConnectionFit(runtimeMinutes = 120, connectionMbps = 30.0)
         val remux = stream(name = "remux", sizeBytes = 60 * gb) // 66.7 Mbps

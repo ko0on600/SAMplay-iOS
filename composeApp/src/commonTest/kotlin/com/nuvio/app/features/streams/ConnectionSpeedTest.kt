@@ -173,7 +173,7 @@ class ConnectionSpeedTest {
     }
 
     @Test
-    fun `sampler reports once, after one second of warm-up and ten of measurement`() {
+    fun `sampler reports once after one second of warm-up and ten of measurement`() {
         val clock = TestTimeSource()
         val reported = mutableListOf<Pair<NetworkKind, Double>>()
         val sampler = sampler(clock, reported)
