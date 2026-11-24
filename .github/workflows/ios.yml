@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-latest
     timeout-minutes: 120
     env:
       IOS_CONFIGURATION: ${{ inputs.configuration || 'Release' }}
