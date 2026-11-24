@@ -55,9 +55,12 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Repo made PUBLIC 2026-11-25 00:18 Riyadh (Sami chose it, accepting the PikPak client credential in
-PikPakApiClient.kt being visible; audit found nothing else). Run 45489580638 (wip-p2) dispatched — Kotlin framework link step SUCCEEDED in 25 min (00:18–00:43 Riyadh); "Build unsigned IPA" (Swift/Xcode) running from 00:43 —
-follow it; on green: verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
+Cancelled 45489580638 (was re-linking Release Kotlin inside a Release xcodebuild). Pushed fix:
+build_unsigned_ipa.sh uses -configuration Debug when KOTLIN_FRAMEWORK_BUILD_TYPE=debug, plus
+-jobs; the Xcode embedAndSign script phase prints CONFIGURATION and uses --console=plain so
+the log can show linkDebug UP-TO-DATE, not linkRelease. Follow the newest wip-p2 run: once
+"Build unsigned IPA" starts, confirm linkReleaseFrameworkIosArm64 is absent. On green:
+verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);

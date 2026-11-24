@@ -8,6 +8,13 @@ cd "$(dirname "$0")/.."
 ROOT="$(pwd -P)"
 VERSION="$(sed -nE 's/^[[:space:]]*MARKETING_VERSION[[:space:]]*=[[:space:]]*([^[:space:]#]+).*$/\1/p' iosApp/Configuration/Version.xcconfig | head -n1)"
 CONFIG="${IOS_CONFIGURATION:-Release}"
+# Kotlin/Native's Xcode integration reads CONFIGURATION first and never falls back to
+# KOTLIN_FRAMEWORK_BUILD_TYPE. A Release xcodebuild would therefore re-link a Release
+# framework from scratch (~50–90 min) even if we just linked Debug. Match the Xcode
+# configuration to the pre-linked Kotlin build type.
+if [ "${KOTLIN_FRAMEWORK_BUILD_TYPE:-}" = "debug" ]; then
+  CONFIG=Debug
+fi
 ./scripts/prepare-ios-dependencies.sh
 mkdir -p build
 DD="$ROOT/build/dd"
@@ -17,6 +24,7 @@ env NUVIO_IOS_DISTRIBUTION=full \
   "ORG_GRADLE_PROJECT_kotlin.native.jvmArgs=${NUVIO_KOTLIN_NATIVE_JVMARGS:--Xmx4608M}" \
   xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -configuration "$CONFIG" \
   -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath "$DD" \
+  -jobs "$(sysctl -n hw.ncpu 2>/dev/null || echo 4)" \
   ARCHS=arm64 ONLY_ACTIVE_ARCH=NO \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" CODE_SIGN_ENTITLEMENTS="" \
   DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" \
