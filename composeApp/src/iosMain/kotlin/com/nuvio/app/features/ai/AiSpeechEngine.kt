@@ -56,6 +56,7 @@ object AiSpeechEngine {
         onState(AiSubtitleJobs.State.Extracting(0))
         var stopped = false
         var language: String? = if (spokenLang == "auto") null else spokenLang
+        val pending = ArrayList<AiCue>()
         val result = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Default) {
             engine.transcribe(
                 url = url,
@@ -67,19 +68,25 @@ object AiSpeechEngine {
                 },
                 onSegment = { lang, line ->
                     if (language == null && lang.isNotBlank()) language = lang
-                    val parts = line.split('\t', limit = 3)
-                    val cue = if (parts.size == 3) {
-                        val s = parts[0].toLongOrNull(); val e = parts[1].toLongOrNull()
-                        if (s != null && e != null) AiCue(s, e, parts[2]) else null
-                    } else null
-                    val go = if (cue != null) onLines(language, listOf(cue)) else true
-                    if (!go) stopped = true
-                    go && !isCancelled()
+                    // An empty line ends a chunk: its lines are shown together, as on Android.
+                    if (line.isEmpty()) {
+                        val go = if (pending.isEmpty()) true else onLines(language, pending.toList()).also { pending.clear() }
+                        if (!go) stopped = true
+                        go && !isCancelled()
+                    } else {
+                        val parts = line.split('\t', limit = 3)
+                        if (parts.size == 3) {
+                            val s = parts[0].toLongOrNull(); val e = parts[1].toLongOrNull()
+                            if (s != null && e != null) pending += AiCue(s, e, parts[2])
+                        }
+                        !isCancelled()
+                    }
                 },
                 isCancelled = isCancelled,
             )
         }
         if (result == "!noaudio") throw NoAudioException()
+        if (pending.isNotEmpty() && !stopped) onLines(language, pending.toList())
         return !stopped
     }
 }

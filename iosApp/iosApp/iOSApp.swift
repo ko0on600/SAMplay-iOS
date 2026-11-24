@@ -5,6 +5,11 @@ import ComposeApp
 struct iOSApp: App {
     @UIApplicationDelegateAdaptor(OrientationLockAppDelegate.self) private var appDelegate
 
+    init() {
+        // SAMplay: whisper.cpp listening for the AI subtitle tools.
+        WhisperSpeechBridge.install()
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()

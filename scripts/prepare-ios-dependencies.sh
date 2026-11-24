@@ -12,6 +12,25 @@ if [[ ! -f "${repository_root}/MPVKit/Package.swift" ]]; then
     git -C "${repository_root}" submodule update --init --depth 1 MPVKit
 fi
 
+
+# SAMplay: whisper.cpp for AI listening (iosApp/SamplayNative).
+whisper_build=b5907
+whisper_checksum=2482ad38f3c8f25a0521d284c9ad3e5838aaa812f57c936f32624b9b7b1bc36c
+whisper_target="${repository_root}/iosApp/SamplayNative/whisper.xcframework"
+if [[ ! -f "${whisper_target}/Info.plist" ]]; then
+    whisper_tmp="$(mktemp -d "${TMPDIR:-/tmp}/samplay-whisper.XXXXXX")"
+    curl --fail --location --retry 5 --retry-all-errors --silent --show-error \
+        --output "${whisper_tmp}/whisper.zip" \
+        "https://github.com/ggml-org/whisper.cpp/releases/download/${whisper_build}/whisper-${whisper_build}-xcframework.zip"
+    if [[ "$(shasum -a 256 "${whisper_tmp}/whisper.zip" | awk '{print $1}')" != "${whisper_checksum}" ]]; then
+        echo "whisper.cpp package checksum mismatch." >&2
+        exit 1
+    fi
+    unzip -q "${whisper_tmp}/whisper.zip" -d "${whisper_tmp}/x"
+    rm -rf "${whisper_target}"
+    cp -R "$(find "${whisper_tmp}/x" -type d -name whisper.xcframework -print -quit)" "${whisper_target}"
+    rm -rf "${whisper_tmp}"
+fi
 if [[ -f "${engine_framework}/Info.plist" ]]; then
     exit 0
 fi

@@ -83,6 +83,8 @@ final class WhisperSpeechBridge: NSObject, AiSpeechEngineBridge {
                 if text.isEmpty { continue }
                 if !onSegment(detected ?? "", "\(t0)\t\(t1)\t\(text)").boolValue { return false }
             }
+            // End of this chunk: the Kotlin side shows its lines together.
+            if !onSegment(detected ?? "", "").boolValue { return false }
             return !isCancelled().boolValue && !samplayWhisperCancelled
         }
 
@@ -233,7 +235,7 @@ final class WhisperSpeechBridge: NSObject, AiSpeechEngineBridge {
         }
         if isCancelled().boolValue || samplayWhisperCancelled { return false }
         // Drain the decoder and the resampler.
-        avcodec_send_packet(d, nil)
+        _ = avcodec_send_packet(d, nil)
         while avcodec_receive_frame(d, frame) == 0 {
             if !convert(frame) { return false }
             av_frame_unref(frame)

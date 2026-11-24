@@ -12,6 +12,7 @@
 		5204D0325E21B049498DAAAD /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C03DCA453987565BAD7AB5BA /* video.mp4 */; };
 		5950F0BCA7E4790326ACD8ED /* captions.srt in Resources */ = {isa = PBXBuildFile; fileRef = E27F0F006756F30DE4E82AEC /* captions.srt */; };
 		7397CF462F80FE3A00AC0F84 /* MPVKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* MPVKit */; };
+		5A3C0E11AA00000000000001 /* SamplayWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = 5A3C0E11AA00000000000003 /* SamplayWhisper */; };
 		C775C0E7A7F486CE63FEB866 /* SubtitlePlaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2673A436033CC351728D43 /* SubtitlePlaybackTests.swift */; };
 		E13BB6F776079BECB1C385AE /* styled.ass in Resources */ = {isa = PBXBuildFile; fileRef = 392AF87E6B301A2EF4CDCAC6 /* styled.ass */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7397CF462F80FE3A00AC0F84 /* MPVKit in Frameworks */,
+				5A3C0E11AA00000000000001 /* SamplayWhisper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +251,7 @@
 			name = iosApp;
 			packageProductDependencies = (
 				A1B2C3D4E5F6A7B8C9D0E1F2 /* MPVKit */,
+				5A3C0E11AA00000000000003 /* SamplayWhisper */,
 			);
 			productName = iosApp;
 			productReference = 07921B4E8F8546BEE682C2FE /* Nuvio.app */;
@@ -283,6 +286,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F1E2D3C4B5A6F7E8D9C0B1A2 /* XCLocalSwiftPackageReference "../MPVKit" */,
+				5A3C0E11AA00000000000002 /* XCLocalSwiftPackageReference "SamplayNative" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AD93033A33973C81BB77B73A /* Products */;
@@ -433,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -452,7 +456,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DownloadsWidgetExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +480,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DownloadsWidgetExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,7 +505,7 @@
 					"$(BUILT_PRODUCTS_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,7 +660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -677,7 +681,7 @@
 					"$(BUILT_PRODUCTS_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,6 +743,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../MPVKit;
 		};
+		5A3C0E11AA00000000000002 /* XCLocalSwiftPackageReference "SamplayNative" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SamplayNative;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,6 +754,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F1E2D3C4B5A6F7E8D9C0B1A2 /* XCLocalSwiftPackageReference "../MPVKit" */;
 			productName = MPVKit;
+		};
+		5A3C0E11AA00000000000003 /* SamplayWhisper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A3C0E11AA00000000000002 /* XCLocalSwiftPackageReference "SamplayNative" */;
+			productName = SamplayWhisper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
