@@ -55,10 +55,12 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Run 45429231561 hit the 50-min timeout in the Release Kotlin link (no errors). Now CI uses KOTLIN_FRAMEWORK_BUILD_TYPE=debug (fast link), tests opt-in. Check the newest wip-p2 run; fix Swift/link errors if any; when green + verify_ipa
-OK, merge to main, upload IPA to Drive "SAMplay iOS", copy to PC, report.
-
-Drive target: SAMplay files live in Drive folder "Xplaier" (id 1pBrJRyzZlsKZ9VY-moj4uExwSquc-Gl6); create subfolder "SAMplay iOS" there.
+Runs 45429231561 (Release Kotlin) and 45439984032 (debug Kotlin) both hit the job timeout while
+still inside the Gradle compile/link step (no compile errors reported; Kotlin compiles locally).
+Cause likely: cold ~/.konan (cache never saved since no job ever succeeded) + K/N static-cache
+building. Pushed: konan cache saved with if: always(), cacheKind.iosArm64=none. Check the newest
+wip-p2 run; if it still times out, compare timings (xcodebuild.log) and consider raising
+timeout-minutes (queue start is just slow, 5-10 min, not blocked by the timeout value).
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);

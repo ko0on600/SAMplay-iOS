@@ -43,8 +43,8 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: gradle/actions/setup-gradle@v5
-      - name: Cache Kotlin Native
-        uses: actions/cache@v4
+      - name: Restore Kotlin Native
+        uses: actions/cache/restore@v4
         with:
           path: ~/.konan
           key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('gradle/libs.versions.toml') }}
@@ -67,6 +67,12 @@ jobs:
       - name: Unit tests (iOS simulator)
         if: inputs.run_tests == true
         run: ./gradlew :composeApp:iosSimulatorArm64Test --tests "com.nuvio.app.features.ai.*" --tests "com.nuvio.app.features.player.SamplayPlayerIosTest" --tests "com.nuvio.app.features.reshaped.*" --no-daemon
+      - name: Save Kotlin Native (also after a failed or timed-out build)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.konan
+          key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('gradle/libs.versions.toml') }}-${{ github.run_id }}
       - name: Remove secrets
         if: always()
         run: rm -f local.properties
