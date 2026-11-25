@@ -55,11 +55,11 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Run 45507665804 failed in Swift (same 4 UIViewControllerRepresentable types). Root cause:
-`import ComposeApp` exports Kotlin `com.nuvio.app.samplay.Context`, which shadows
-`UIViewControllerRepresentable.Context`. Signatures now use
-`UIViewControllerRepresentableContext<...>`. Follow the newest wip-p2 run. On green:
-verify_ipa, Drive Xplaier/"SAMplay iOS", merge main, report.
+Context shadowing is fixed (45511810899 got past it). That run failed on iOS 27.1 APIs
+(UIHingeInteraction, reservedRegions, verticalBarEdge, toolbarVerticalBehavior) compiled
+against the iPhoneOS 26.5 SDK — `#available` is runtime-only. Those blocks are now behind
+`#if SAMPLAY_IOS_27_1_SDK` (off on CI). Follow the newest wip-p2 run. On green: verify_ipa,
+Drive Xplaier/"SAMplay iOS", merge main, report.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
