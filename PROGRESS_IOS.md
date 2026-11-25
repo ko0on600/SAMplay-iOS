@@ -55,11 +55,12 @@ checkout --detach wip-p2; git -C lc stash pop`. Run:
 :composeApp:compileKotlinIosArm64 :composeApp:compileTestKotlinIosArm64 --no-configuration-cache -q`
 
 ## NEXT ACTION
-Context shadowing is fixed (45511810899 got past it). That run failed on iOS 27.1 APIs
-(UIHingeInteraction, reservedRegions, verticalBarEdge, toolbarVerticalBehavior) compiled
-against the iPhoneOS 26.5 SDK — `#available` is runtime-only. Those blocks are now behind
-`#if SAMPLAY_IOS_27_1_SDK` (off on CI). Follow the newest wip-p2 run. On green: verify_ipa,
-Drive Xplaier/"SAMplay iOS", merge main, report.
+Delivered. Run 45515522853 green. IPA uploaded to Drive folder "SAMplay iOS"
+(id 1UCvP4Ele2TEIC7QepRz14vz__EjTOtTA, parent Xplaier 1pBrJRyzZlsKZ9VY-moj4uExwSquc-Gl6):
+file id 1zsIDgXnCIYHMIyoPutvNB6ZWqUGY6Exx
+https://drive.google.com/file/d/1zsIDgXnCIYHMIyoPutvNB6ZWqUGY6Exx/view?usp=drivesdk
+Box path: /workspace/samplay-ios/deliver/SAMplay-iOS-2.0.7-unsigned.ipa
+CI verify_ipa.sh: VERIFY OK. Merging wip-p2 into main.
 
 ## CI minutes warning
 Jobs with timeout-minutes 120 stayed queued forever (account macOS minutes running low?);
